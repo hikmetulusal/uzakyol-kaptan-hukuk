@@ -1,0 +1,1951 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>DENİZ HUKUKU ve ULUSLARARASI DENİZCİLİK SÖZLEŞMELERİ DERSİ Deneme Sınavı (Soru Bankası Güncelleme:15 Aralık 2025) </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 16px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #e0e0e0;            /* gri arka plan (görseldeki gibi) */
+      color: #222;
+    }
+
+    .page-title {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .exam-box {
+      background: #ffffff;
+      border: 1px solid #cccccc;
+      max-width: 900px;
+      margin: 0 auto;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    }
+
+    .question-header {
+      background: #98dfa1;            /* açık yeşil şerit */
+      padding: 8px 12px;
+      font-weight: 600;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .question-body {
+      padding: 16px 18px 12px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .question-text {
+      margin-bottom: 12px;
+    }
+
+    .meta-line {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 6px;
+    }
+
+    .section-label {
+      margin-top: 6px;
+      padding-top: 4px;
+      border-top: 1px solid #dddddd;
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 8px;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 sütun */
+      column-gap: 60px;
+      row-gap: 8px;
+      padding: 0 10px 12px;
+      font-size: 14px;
+    }
+
+    .option-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      padding: 4px 0;
+    }
+
+    .option-row.disabled {
+      cursor: default;
+    }
+
+    .radio-circle {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid #c4c4c4;
+      background: #f9f9f9;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .option-row.selected .radio-circle::after {
+      content: "";
+      position: absolute;
+      inset: 2px;
+      border-radius: 50%;
+      background: #007bff;
+    }
+
+    .option-row.correct .radio-circle {
+      border-color: #1f9d55;
+    }
+
+    .option-row.incorrect .radio-circle {
+      border-color: #e3342f;
+    }
+
+    .footer-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 10px 18px 12px;
+      border-top: 1px solid #dddddd;
+      font-size: 13px;
+      background: #f5f5f5;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .stats-block {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .timer-line {
+      margin-top: 4px;
+      font-weight: 600;
+    }
+
+    button {
+      border-radius: 4px;
+      border: 1px solid #b0b0b0;
+      padding: 6px 12px;
+      font-size: 13px;
+      cursor: pointer;
+      background: #ffffff;
+      margin-left: 4px;
+    }
+
+    button:hover {
+      background: #f0f0f0;
+    }
+
+    .feedback {
+      font-size: 13px;
+      margin-top: 6px;
+    }
+    .feedback.correct { color: #1f9d55; }
+    .feedback.incorrect { color: #e3342f; }
+
+    @media (max-width: 700px) {
+      .options-grid {
+        grid-template-columns: 1fr;  /* mobilde tek sütun */
+        column-gap: 20px;
+      }
+      .question-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-title">DENİZ HUKUKU ve ULUSLARARASI DENİZCİLİK SÖZLEŞMELERİ DERSİ Deneme Sınavı (Soru Bankası Güncelleme:15 Aralık 2025)</div>
+
+  <div class="exam-box">
+    <div class="question-header" id="questionHeader">
+      <span>Soru 1</span>
+      <span id="questionProgress"></span>
+    </div>
+
+    <div class="question-body">
+      <div class="meta-line" id="metaLine"></div>
+
+      <div class="question-text" id="questionText"></div>
+
+      <div id="questionSub" style="font-size:13px;color:#666;margin-bottom:8px;"></div>
+
+      <div class="section-label">cevap seçenekleri</div>
+
+      <div class="options-grid" id="optionsGrid">
+        <!-- JS ile doldurulacak -->
+      </div>
+
+      <div id="feedback" class="feedback"></div>
+    </div>
+
+    <div class="footer-bar">
+      <div class="stats-block">
+        <div>Doğru cevap sayısı : <span id="statCorrect">0</span></div>
+        <div>Yanlış cevap sayısı : <span id="statWrong">0</span></div>
+        <div>Toplam soru sayısı : <span id="statTotal">0</span></div>
+        <div>Şu anki soru : <span id="statCurrent">1</span>/<span id="statTotal2">0</span></div>
+        <div class="timer-line">Geçen süre : <span id="timer">00:00</span></div>
+      </div>
+
+      <div>
+        <button id="btnShowAnswer" type="button">Cevabı Göster</button>
+        <button id="btnNext" type="button">Sonraki Soru</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* 
+      BURASI SORU BANKASI
+      Excel dosyandaki yapı şöyleydi:
+      Question, 1 st Choice, 2 nd Choice, 3 rd Choice, 4 th Choice, 5 th Choice,
+      Subtitle, Correct Answer (Letter)
+
+      Aşağıya 100 sorunun hepsi bu formatta gelebilir.
+      Şimdilik ilk 3 soruyu Excel'inden örnek olarak koydum.
+      Geri kalan 97’yi aynı formatta ekleyebilirsin.
+    */
+   const questions = [
+{
+  id: 1,
+  subtitle: "U/A Andlaşmalar",
+  question: "Uluslararası Denizcilik Örgütü’nün kısaltılmış ifadesi nedir?",
+  options: ["ITU", "SOLAS", "UDÖ", "IMO", "GMDSS"],
+  correctIndex: 3
+},
+
+{
+  id: 2,
+  subtitle: "U/A Andlaşmalar",
+  question: "Aşağıdakilerden hangisi IMO’nun organlarından değildir?",
+  options: ["Devletler Yönetim Kurulu", "Genel Kurul", "Komiteler", "Konsey", "Sekreterya"],
+  correctIndex: 0
+},
+
+{
+  id: 3,
+  subtitle: "U/A Andlaşmalar",
+  question: "Uluslararası Denizcilik Örgütüne Türkiye üye midir?",
+  options: ["Hayır", "AB üyeliğinden sonra yürürlüğe girecektir", "Üyelik başvurusu yapılmış, cevap beklenmektedir", "Evet", "Üye olunması planlanmamaktadır"],
+  correctIndex: 3
+},
+
+{
+  id: 5,
+  subtitle: "U/A Andlaşmalar",
+  question: "Deniz Emniyeti Komitesi kısaltması hangisidir?",
+  options: ["FC", "TC", "LEG", "MEPC", "MSC"],
+  correctIndex: 4
+},
+
+{
+  id: 6,
+  subtitle: "U/A Andlaşmalar",
+  question: "IMO’nun Deniz Çevresi ile ilgili komitesi hangisidir?",
+  options: ["MEPC", "MSC", "DSC", "FAL", "Hiçbiri"],
+  correctIndex: 0
+},
+
+{
+  id: 7,
+  subtitle: "U/A Andlaşmalar",
+  question: "IMO’nun “Güvenlik Grubu” sözleşmesi hangisidir?",
+  options: ["MARPOL 73/78", "SAR/79", "NUCLEAR/71", "HNS/79", "INTERVENTION/69"],
+  correctIndex: 1
+},
+
+{
+  id: 8,
+  subtitle: "U/A Andlaşmalar",
+  question: "SAR/79 hangi grup IMO sözleşmesi içindedir?",
+  options: ["Maritime Safety", "Diğer IMO sözleşmeleri", "Liability and Compensation", "Marine Pollution", "Hepsi yanlış"],
+  correctIndex: 0
+},
+
+{
+  id: 11,
+  subtitle: "U/A Andlaşmalar",
+  question: "Petrol kirliliğine hazırlık ve işbirliği sözleşmesi hangisidir?",
+  options: ["MARPOL", "IOPP", "OPRC", "OILPOL", "FUN"],
+  correctIndex: 2
+},
+
+{
+  id: 13,
+  subtitle: "U/A Andlaşmalar",
+  question: "Sorumluluk-Tazminat sözleşmelerinden hangisidir?",
+  options: ["STF/71", "SUA/88", "SAR/79", "FUND/71", "OILPOL/54"],
+  correctIndex: 3
+},
+
+{
+  id: 14,
+  subtitle: "U/A Andlaşmalar",
+  question: "FUND/71 hangi kategoriye girer?",
+  options: ["Maritime Safety", "Marine Pollution", "Liability and Compensation", "Other Subjects", "Hepsi yanlış"],
+  correctIndex: 2
+},
+
+{
+  id: 15,
+  subtitle: "U/A Andlaşmalar",
+  question: "Acil durumlara uygun düzenlemeler hangileridir?",
+  options: ["II,VI", "I,V", "IV,V,VI", "I,VI", "III,IV"],
+  correctIndex: 3
+},
+
+{
+  id: 16,
+  subtitle: "U/A Andlaşmalar",
+  question: "INMARSAT CONVENTION hangisidir?",
+  options: ["II", "V", "IV", "I", "III"],
+  correctIndex: 1
+},
+
+{
+  id: 17,
+  subtitle: "U/A Andlaşmalar",
+  question: "CLC 1969 hangi sınıfa girer?",
+  options: ["IV", "II", "I", "III", "II ve III"],
+  correctIndex: 3
+},
+
+{
+  id: 19,
+  subtitle: "U/A Andlaşmalar",
+  question: "UNCLOS’a göre yetki olmayan hangisidir?",
+  options: ["İletişim kablosu çekmek", "Deniz tabanı ekonomik değeri", "Deniz taşımacılığı yapmak", "Balıkçılık yapmak", "Boru hattı döşemek"],
+  correctIndex: 3
+},
+
+{
+  id: 20,
+  subtitle: "U/A Andlaşmalar",
+  question: "Tehlikeli Yükler Uluslararası Kodu hangisidir?",
+  options: ["IMO", "SOLAS", "MARPOL", "UND", "IMDG"],
+  correctIndex: 4
+},
+
+{
+  id: 21,
+  subtitle: "U/A Andlaşmalar",
+  question: "IMDG Kod’un paketleme kuralları nerededir?",
+  options: ["Bölüm 1 – Kısım 2", "Bölüm 1 – Kısım 3", "Bölüm 1 – Kısım 4", "Bölüm 2 – Kısım 2", "Bölüm 2 – Kısım 3"],
+  correctIndex: 2
+},
+
+{
+  id: 22,
+  subtitle: "U/A Andlaşmalar",
+  question: "LRIT sistemi kaç deniz mili mesafede izleme sağlar?",
+  options: ["750", "1000", "250", "2000", "500"],
+  correctIndex: 1
+},
+
+{
+  id: 23,
+  subtitle: "U/A Andlaşmalar",
+  question: "Balast sularına hangi işlemler uygulanır?",
+  options: ["Balast değişimi veya arıtma", "Balast almadan sefer yapma", "Balast tanklarını iptal etme", "Balast suyunu kaynatma", "Balast tanklarına kimyasal doldurma"],
+  correctIndex: 0
+},
+
+{
+  id: 24,
+  subtitle: "U/A Andlaşmalar",
+  question: "2009 Gemi Geri Dönüşüm Sözleşmesi hangi şehirdir?",
+  options: ["Hong Kong 2009", "Nairobi WRC 2007", "Bunker 2001", "Fund 1992", "OPRC 1990"],
+  correctIndex: 0
+},
+
+{
+  id: 25,
+  subtitle: "U/A Andlaşmalar",
+  question: "1971 STP Anlaşması hangi bölge içindir?",
+  options: ["Ortadoğu ve Hint Okyanusu", "Güney Pasifik ve Avustralya", "Kuzey ve Güney Buz Denizi", "Kuzey Atlantik ve Grönland", "Kuzey Pasifik ve Alaska"],
+  correctIndex: 0
+},
+
+{
+  id: 26,
+  subtitle: "U/A Andlaşmalar",
+  question: "1979 Intervention amacı nedir?",
+  options: ["Kıyı devletine müdahale hakkı", "Çevresel kirliliğin önlenmesi", "Arama-kurtarma hakkı", "Korsanlığa müdahale hakkı", "Arama-kurtarma düzenlemeleri"],
+  correctIndex: 0
+},
+
+{
+  id: 27,
+  subtitle: "U/A Andlaşmalar",
+  question: "Intervention 1969 konusu nedir?",
+  options: ["Açık denizlerde petrol kazaları", "Petrol zarar fonu", "Petrol dışı maddelere müdahale", "Karadaki tesislerin kirliliği", "Deniz trafiğinin kolaylaştırılması"],
+  correctIndex: 0
+},
+
+{
+  id: 28,
+  subtitle: "U/A Andlaşmalar",
+  question: "CLC 1969 neyin kısaltmasıdır?",
+  options: ["Konteyner güvenliği", "Petrol kirliliği hukuki sorumluluk", "Kara tesisleri kirlenmesi", "Personel kaçma sorumluluğu", "Can emniyeti sözleşmesi"],
+  correctIndex: 1
+},
+
+{
+  id: 29,
+  subtitle: "U/A Andlaşmalar",
+  question: "CLC’ye göre kaç tondan fazla petrol taşıyan tanker sigorta yaptırır?",
+  options: ["750", "2000", "1000", "1500", "500"],
+  correctIndex: 1
+},
+
+{
+  id: 30,
+  subtitle: "U/A Andlaşmalar",
+  question: "Tehlikeli Maddeler Zarar Tazmin Sözleşmesi hangisidir?",
+  options: ["FUND 71/92", "SDR 1978", "UNCLOS 1982", "CLC 69/92", "HNS 1996/2010"],
+  correctIndex: 4
+},
+
+{
+  id: 31,
+  subtitle: "U/A Andlaşmalar",
+  question: "FAL 1965 hangi alanı kolaylaştırır?",
+  options: ["Gemi trafik yoğunluğu azaltılması", "Trafik ayırma düzenleri standardizasyonu", "Trafik izleme sistemleri standardizasyonu", "Giriş–çıkış evrakları standardizasyonu", "Deniz trafik düzenlerinin harmonizasyonu"],
+  correctIndex: 3
+},
+
+{
+  id: 32,
+  subtitle: "U/A Andlaşmalar",
+  question: "Facilitation of Maritime Traffic amacı nedir?",
+  options: ["Deniz işçilerinin korunması", "Çatışma önleme kuralları", "Fener ve şamandıra sağlamak", "Gereksiz zaman kaybını önleme", "IMO altında trafik kontrol grubu kurmak"],
+  correctIndex: 3
+},
+
+{
+  id: 33,
+  subtitle: "SOLAS",
+  question: "Uluslararası denizde can emniyeti sözleşmesi aşağıdakilerden hangisidir?",
+  options: ["MARPOL", "SAR", "ISM", "SOLAS", "STCW"],
+  correctIndex: 3
+},
+
+{
+  id: 36,
+  subtitle: "SOLAS",
+  question: "Bir gemide can güvenliği teçhizatının belirlenmesinde hangi sözleşme etkilidir?",
+  options: ["COLREG", "SOLAS", "SAR", "MARPOL", "STCW"],
+  correctIndex: 1
+},
+
+{
+  id: 38,
+  subtitle: "SOLAS",
+  question: "SOLAS’ın ana gayelerinden biri hangisidir?",
+  options: ["Gemi adamı vardiya standartları", "Balıkçı gemisi personel standardı", "Gemi teçhizatı minimum standartları", "IMO gücünü ortaya koymak", "Kirlenmeyi önlemek"],
+  correctIndex: 2
+},
+
+{
+  id: 39,
+  subtitle: "SOLAS",
+  question: "Piroteknik malzeme standartları hangi konvansiyonda ele alınır?",
+  options: ["International Safety of Life At Sea", "International Maritime Organization", "International Safety Management", "Collision Regulations", "Search and Rescue"],
+  correctIndex: 0
+},
+
+{
+  id: 41,
+  subtitle: "SOLAS",
+  question: "Yolcu gemisi kabulü için minimum yolcu sayısı?",
+  options: ["12", "11", "9", "10", "13"],
+  correctIndex: 4
+},
+
+{
+  id: 42,
+  subtitle: "SOLAS",
+  question: "Survey ve sertifikalardan kim sorumludur?",
+  options: ["Klas kurumları", "Bayrak Devleti", "Kıyı Devleti", "Liman Devleti", "IMO"],
+  correctIndex: 1
+},
+
+{
+  id: 44,
+  subtitle: "SOLAS",
+  question: "SOLAS’a tabi olmayan hangisidir?",
+  options: ["I", "II", "III", "IV", "II,IV"],
+  correctIndex: 2
+},
+
+{
+  id: 49,
+  subtitle: "SOLAS",
+  question: "Kumanyalık standartlarını hangi sözleşme belirler?",
+  options: ["FUN", "FAL", "MLC", "SOLAS", "ISM"],
+  correctIndex: 2
+},
+
+{
+  id: 50,
+  subtitle: "SOLAS",
+  question: "Hangisi SOLAS zorunlu kodlarından değildir?",
+  options: ["ISM", "IBC", "IGC", "Grain", "ILO"],
+  correctIndex: 4
+},
+
+{
+  id: 51,
+  subtitle: "SOLAS",
+  question: "OTS cihazı ile ilgili yanlış ifade hangisidir?",
+  options: ["Sahil istasyonları veri alışverişi yapar", "İsteğe bağlı bilgi gönderilmez", "Sahil istasyonları bilgi iletir", "Civardaki gemiler bilgileri alır", "Gemileri izleyebilir"],
+  correctIndex: 1
+},
+
+{
+  id: 54,
+  subtitle: "STCW",
+  question: "Gemi adamlarının eğitilmesi, belgelendirilmesi ve vardiya standartları ile ilgili sözleşme hangisidir?",
+  options: ["MARPOL", "SOLAS", "STCW", "SAR", "ISM"],
+  correctIndex: 2
+},
+
+{
+  id: 55,
+  subtitle: "STCW",
+  question: "Eğitim, Sertifika ve Vardiya Standartları hakkında uluslararası sözleşme hangisidir?",
+  options: ["SOLAS 74", "COLREG 72", "1982 PARIS MEMORANDUMU", "ISM CODE", "STCW 78"],
+  correctIndex: 4
+},
+
+{
+  id: 56,
+  subtitle: "STCW",
+  question: "STCW 2010’a göre haftalık çalışma süresi en fazla kaç olmalıdır?",
+  options: ["72", "77", "75", "66", "70"],
+  correctIndex: 0
+},
+
+{
+  id: 57,
+  subtitle: "STCW",
+  question: "24 saatte minimum dinlenme süresi nedir?",
+  options: ["12", "9", "8", "14", "10"],
+  correctIndex: 4
+},
+
+{
+  id: 59,
+  subtitle: "STCW",
+  question: "İstirahat süreleri arasındaki maksimum süre?",
+  options: ["10 saat", "12 saat", "18 saat", "14 saat", "16 saat"],
+  correctIndex: 3
+},
+
+{
+  id: 60,
+  subtitle: "STCW",
+  question: "Dinlenme periyotları arasındaki maksimum süre?",
+  options: ["6", "11", "14", "10", "8"],
+  correctIndex: 1
+},
+
+{
+  id: 64,
+  subtitle: "STCW",
+  question: "Haftalık minimum dinlenme süresi?",
+  options: ["77 saat", "50 saat", "60 saat", "24 saat", "48 saat"],
+  correctIndex: 0
+},
+
+{
+  id: 65,
+  subtitle: "STCW",
+  question: "Haftalık toplam istirahat süresi en az kaç olmalıdır?",
+  options: ["55", "77", "70", "65", "40"],
+  correctIndex: 1
+},
+
+{
+  id: 67,
+  subtitle: "STCW",
+  question: "10 saatlik istirahat indirim koşulları süreleri?",
+  options: ["1–6–24", "2–7–77", "3–7–72", "2–7–48", "2–6–36"],
+  correctIndex: 1
+},
+
+{
+  id: 68,
+  subtitle: "ISM",
+  question: "ISM Code SOLAS’74’ün hangi bölümündedir?",
+  options: ["Bölüm II-1", "Bölüm II-2", "Bölüm III", "Bölüm IX", "Bölüm XI"],
+  correctIndex: 3
+},
+
+{
+  id: 69,
+  subtitle: "ISM",
+  question: "Güvenli yönetim standartları SOLAS’ın kaçıncı bölümünde yer almaktadır?",
+  options: ["III. Bölüm", "IX. Bölüm", "X. Bölüm", "IV. Bölüm", "I. Bölüm"],
+  correctIndex: 1
+},
+
+{
+  id: 70,
+  subtitle: "ISM",
+  question: "Uluslararası Denizcilik Örgütü (IMO)’nun gemilerin dışında denizcilik şirketlerini doğrudan kapsayan ilk düzenlemesi hangisidir?",
+  options: ["Uluslararası Dökme Kimyasallar Kodu (IBC)", "Uluslararası Güvenlik Yönetimi Kodu (ISM)", "FAL Sözleşmesi", "IMDG Kodu", "LSA Kodu"],
+  correctIndex: 1
+},
+
+{
+  id: 72,
+  subtitle: "ISM",
+  question: "Uluslararası Emniyet Yönetimi Kodu (ISM Kod) ile ilgili aşağıdaki ifadelerden hangisi doğrudur?",
+  options: ["Zorunlu dokümantasyon eksikliği belge iptalini gerektirir", "Emniyet Yönetimi El Kitabı idare veya klas tarafından onaylanmalıdır", "Uygunluk belgesinin bir örneği gemide bulundurulmalıdır", "Uygunluk belgesi iptal edilirse SMC geçersiz olur", "Geçici Uygunluk Belgesi düzenlenebilir"],
+  correctIndex: 3
+},
+
+{
+  id: 76,
+  subtitle: "ISM",
+  question: "Fırtınalı havalarda güverteye çıkacak olan gemiadamı nasıl bir güvenlik önlemi alır?",
+  options: ["İş ayakkabısı ve tulum giyilir", "Can yeleği giyilir", "Dalma giysisi giyilir", "Isı korumalı tulum giyilir", "İşbaşı giysisi giyilir"],
+  correctIndex: 1
+},
+
+{
+  id: 77,
+  subtitle: "ISM",
+  question: "Kapalı mahallere girişte yapılması gereken doğru davranış hangisidir?",
+  options: ["Sadece zehirli gaz ölçümü yapmak", "Oksijen seviyesini artırarak girmek", "Sadece patlayıcı gaz ölçmek", "Oksijen, patlayıcı ve zehirli gaz ölçümü yapmak", "EEBD ile girmek"],
+  correctIndex: 3
+},
+
+{
+  id: 79,
+  subtitle: "ISM",
+  question: "Aşağıdakilerden hangisi gemiye yeni katılan bir gemiadamının uyumlandırma eğitimi konularından değildir?",
+  options: ["Direkte çalışma usulleri", "Can kurtarma araçlarının yerleri", "Geminin terkini gerektiren acil durumlar", "Acil durum işaretleri", "Role görevleri"],
+  correctIndex: 0
+},
+
+{
+  id: 82,
+  subtitle: "ISPS",
+  question: "ISPS Kod hangi tarihte yürürlüğe girmiştir?",
+  options: ["1 Temmuz 2003", "1 Temmuz 2004", "1 Ağustos 2005", "1 Ağustos 2009", "1 Temmuz 2005"],
+  correctIndex: 1
+},
+
+{
+  id: 83,
+  subtitle: "ISPS",
+  question: "SOLAS Bölüm XI’in uygulandığı gemilerde Sürekli Özet Kayıt hangi tarihten itibaren tutulmuştur?",
+  options: ["18 Nisan 2006", "01 Temmuz 2004", "12 Aralık 2004", "16 Haziran 2007", "27 Mart 2005"],
+  correctIndex: 1
+},
+
+{
+  id: 84,
+  subtitle: "ISPS",
+  question: "Liman Tesisi Uygunluk Belgesi kaç yıl geçerlidir?",
+  options: ["2 Yıl", "3 Yıl", "Süresiz", "5 Yıl", "10 Yıl"],
+  correctIndex: 3
+},
+
+{
+  id: 85,
+  subtitle: "ISPS",
+  question: "Taraf Devlet her liman tesisi için ne yapacaktır?",
+  options: ["Güvenlik Seviyesi 2 ilanı", "Liman Tesisi Güvenlik Sorumlusu atanması", "Liman Tesisi Güvenlik Planı", "Gemi Güvenlik Zabiti ataması", "Liman Tesisi Güvenlik Değerlendirmesi"],
+  correctIndex: 4
+},
+
+{
+  id: 87,
+  subtitle: "ISPS",
+  question: "Sınırlı alanlara ait bilgiler kime verilebilir?",
+  options: ["Armatör", "Şirket personeli", "Yük sahibi", "Bayrak devleti temsilcileri", "Aracı firma"],
+  correctIndex: 1
+},
+
+{
+  id: 88,
+  subtitle: "ISPS",
+  question: "ISPS Kod Bölüm A Kural 11.2’ye göre yetkilendirilen kişi kimdir?",
+  options: ["Nöbetçi Zabiti", "Şirket Güvenlik Sorumlusu", "Gemi Güvenlik Zabiti", "Liman Tesisi Güvenlik Sorumlusu", "2. Kaptan"],
+  correctIndex: 1
+},
+
+{
+  id: 89,
+  subtitle: "ISPS",
+  question: "ISPS kapsamında değerlendirme ve sertifikasyon yapabilen kuruluş hangisidir?",
+  options: ["ICAO", "MSC", "RSM", "CSM", "RSO"],
+  correctIndex: 4
+},
+
+{
+  id: 90,
+  subtitle: "ISPS",
+  question: "Belirli tehdide karşı yapılan arama tipi hangisidir?",
+  options: ["Reaktif Arama", "Caydırıcı Arama", "Koordinasyon Araması", "Teşkilat Araması", "Plansız Arama"],
+  correctIndex: 0
+},
+
+{
+  id: 91,
+  subtitle: "ISPS",
+  question: "Güvenlik Nöbetçi Heyeti asgari kimlerden oluşur?",
+  options: ["Vardiya Zabiti ve Makine Personeli", "3. Kaptan ve Lumbaraj", "3. Kaptan ve Güverte Personeli", "2. Kaptan ve Lumbaraj", "Vardiya Zabiti, Devriye ve Lumbaraj"],
+  correctIndex: 4
+},
+
+{
+  id: 92,
+  subtitle: "ISPS",
+  question: "Gemi Güvenlik Zabiti sorumluluğu olmayan hangisidir?",
+  options: ["Denetim", "Koordinasyon", "Eğitim sağlanması", "Plan uygulanması", "Güvenlik bilinci"],
+  correctIndex: 0
+},
+
+{
+  id: 93,
+  subtitle: "ISPS",
+  question: "Özel güvenlik görevli personelin sorumluluğu olmayan hangisidir?",
+  options: ["Ekipman testi", "Kalabalık yönetimi", "Silah tanıma", "Sistem analizi", "Fiziki arama"],
+  correctIndex: 3
+},
+
+{
+  id: 94,
+  subtitle: "ISPS",
+  question: "Sınırlı alanların amacı olmayan hangisidir?",
+  options: ["Yük korunması", "Ziyaretçi korunması", "Personel korunması", "Yetkili personel korunması", "İzinsiz girişin önlenmesi"],
+  correctIndex: 1
+},
+
+{
+  id: 95,
+  subtitle: "ISPS",
+  question: "Liman tesisinde güvenlik önlemleri en az müdahale gerektirecek şekilde kimler için uygulanır?",
+  options: ["Hepsi", "I,III,IV,V", "I,III,IV", "I,II,III,IV", "I,II,IV,V"],
+  correctIndex: 0
+},
+
+{
+  id: 96,
+  subtitle: "ISPS",
+  question: "ISPS güvenlik seviyeleri ile ilgili yanlış ifade hangisidir?",
+  options: ["Gemi seviyesi yüksekse DoS", "3 seviye vardır", "Sadece bayrak devleti belirler", "DoS kaptan/SSO imzalar", "Liman seviyesi yüksekse DoS"],
+  correctIndex: 2
+},
+
+{
+  id: 97,
+  subtitle: "ISPS",
+  question: "Zarar görebilir yanların tanımıyla ilgili olmayan hangisidir?",
+  options: ["Erişim noktaları", "Birlikte hareket", "Mevcut tedbirler", "Liman servisleri", "Eğitim yaralanma videoları"],
+  correctIndex: 4
+},
+
+{
+  id: 98,
+  subtitle: "ISPS",
+  question: "ISPS kapsamında liman tesislerimizin güvenlik seviyesi nedir?",
+  options: ["2", "4", "5", "3", "1"],
+  correctIndex: 4
+},
+
+{
+  id: 99,
+  subtitle: "ISPS",
+  question: "Asgari koruyucu önlemlerin sürdürüldüğü seviye hangisidir?",
+  options: ["Sınırlı", "Seviye 2", "Normal", "Seviye 3", "Seviye 1"],
+  correctIndex: 4
+},
+
+{
+  id: 100,
+  subtitle: "ISPS",
+  question: "Kumanya kontrolü hangi güvenlik seviyesinde yapılır?",
+  options: ["Seviye 1", "Seviye 4", "Seviye 5", "Seviye 3", "Seviye 2"],
+  correctIndex: 0
+},
+
+{
+  id: 101,
+  subtitle: "ISPS",
+  question: "Işıklandırma ve gözetimin artırılması hangi seviyede?",
+  options: ["Normal", "Seviye 1", "Seviye 3", "Sınırlı", "Seviye 2"],
+  correctIndex: 4
+},
+
+{
+  id: 102,
+  subtitle: "ISPS",
+  question: "Arama sıklığı ve kapsamının artırılması hangi seviyede?",
+  options: ["Normal", "Seviye 3", "Seviye 2", "Sınırlı", "Seviye 1"],
+  correctIndex: 2
+},
+
+{
+  id: 103,
+  subtitle: "ISPS",
+  question: "Gemiye giren kişilerin refakati hangi seviyede?",
+  options: ["Seviye 2", "Sınırlı", "Normal", "Seviye 3", "Seviye 1"],
+  correctIndex: 0
+},
+
+{
+  id: 104,
+  subtitle: "ISPS",
+  question: "Olağanüstü hallerde güvenlik seviyesi hangisine çıkarılır?",
+  options: ["Seviye 1", "Seviye 3", "Seviye 2", "Seviye 4", "Seviye 5"],
+  correctIndex: 1
+},
+
+{
+  id: 105,
+  subtitle: "ISPS",
+  question: "Sahipsiz bagajın kabul edilmemesi hangi seviyede?",
+  options: ["Seviye 1", "Seviye 3", "Seviye 5", "Seviye 2", "Seviye 4"],
+  correctIndex: 1
+},
+
+{
+  id: 106,
+  subtitle: "ISPS",
+  question: "Gemiye biniş-inişin durdurulması hangi seviyede?",
+  options: ["Normal", "Sınırlı", "Seviye 2", "Seviye 3", "Seviye 1"],
+  correctIndex: 3
+},
+
+{
+  id: 107,
+  subtitle: "LOAD LINE",
+  question: "Gemilerin taşıyabileceği max. yük miktarını ve su üzerinde batabileceği max. draftı belirlemek maksadıyla gemilerin nasıl ölçümlendirileceğinin belirlendiği uluslararası sözleşmenin kısa adı aşağıdakilerden hangisidir?",
+  options: ["SOLAS", "LL", "STCW", "LLMC", "LDC"],
+  correctIndex: 1
+},
+
+{
+  id: 111,
+  subtitle: "LOAD LINE",
+  question: "Kereste (timber) yükü için friborda ilişkin gereklilikler LOADLINE sözleşmesinin hangi bölümünde (Annex) açıklanmıştır?",
+  options: ["Bölüm I", "Bölüm II", "Bölüm III", "Bölüm IV", "Bölüm III / Kısım 2"],
+  correctIndex: 3
+},
+
+{
+  id: 112,
+  subtitle: "LOAD LINE",
+  question: "Mevsimsel periyotlar, bölge ve alanlara ilişkin hususlar LOADLINE sözleşmesinin hangi bölümünde (Annex) açıklanmıştır?",
+  options: ["Bölüm I", "Bölüm II", "Bölüm III", "Bölüm IV", "Bölüm C"],
+  correctIndex: 1
+},
+
+{
+  id: 114,
+  subtitle: "LOAD LINE",
+  question: "Aşağıdaki gemi türlerinden hangisi ya da hangileri “Uluslararası Yükleme Hattı (Load Line 1966)” sözleşmesinin hükümlerini yerine getirmek zorunda değildir?",
+  options: ["I, II, III, V", "I, II, III, IV, V", "I, II, III, V", "I, II, IV", "III"],
+  correctIndex: 0
+},
+
+{
+  id: 115,
+  subtitle: "DZ İŞ ve TTK",
+  question: "Aşağıdakilerden hangisi denizcilik ile ilgili ulusal mevzuatımız içinde yer almaz?",
+  options: ["Gemilerin gemi adamları ile donatılmasına ilişkin yönerge", "Armatörler Birliği Kanunu", "Gemi adamları sağlık yönergesi", "Deniz İş Kanunu", "Gemi adamları yönetmeliği"],
+  correctIndex: 1
+},
+
+{
+  id: 116,
+  subtitle: "DZ İŞ ve TTK",
+  question: "Aşağıdakilerden hangisi Kanundaki “Deniz Ticaret Sözleşmeleri” içerisinde yer almamaktadır?",
+  options: ["Deniz Yolu ile yolcu sözleşmesi", "Navlun sözleşmesi", "Yolcu taşıma sözleşmesi", "Gemi inşaa sözleşmesi", "Gemi kiralama sözleşmesi"],
+  correctIndex: 3
+},
+
+{
+  id: 117,
+  subtitle: "DZ İŞ ve TTK",
+  question: "Türk bayraklı gemilerde çalışan ve çalışacak olan gemi adamlarının yeterlikleri, eğitimleri, sınavları, belgelendirilmeleri, sağlık durumları, kütükleme işlemleri ve vardiya tutmaları ile ilgili hususlar hangi yazılı kural tarafından düzenlenmiştir?",
+  options: ["Denetleme Yönetmeliği", "SOLAS", "Eğitim ve sınav yönergesi", "Gemilerin Gemi adamları ile Donatılması Yönetmeliği", "Gemi adamları Yönetmeliği"],
+  correctIndex: 4
+},
+
+{
+  id: 118,
+  subtitle: "DZ İŞ ve TTK",
+  question: "Gemi adamları Yönetmeliğine göre, aşağıdaki numaralandırılmış cümlelerden hangileri gemi adamı olma şartlarını sağlar?",
+  options: ["I, II, III, IV ve V", "I, III ve V", "I ve II", "I, III, IV ve V", "I, II, III ve V"],
+  correctIndex: 0
+},
+
+{
+  id: 119,
+  subtitle: "DZ İŞ ve TTK",
+  question: "Deniz Hukukunun özellikleri aşağıdakilerden hangisidir?",
+  options: ["Kendine özgüdür, moderndir, ulusaldır", "Kendine özgüdür, gelenekseldir, uluslararasıdır", "Moderndir, uluslararasıdır", "Özeldir, moderndir, uluslararasıdır", "Geneldir, moderndir, uluslararasıdır"],
+  correctIndex: 1
+},
+
+{
+  id: 120,
+  subtitle: "DZ İŞ ve TTK",
+  question: "Aşağıdakilerden hangisi Deniz Özel Hukuku dallarından biridir?",
+  options: ["Deniz Ticareti Hukuku", "Deniz Sosyal Hukuku", "Deniz Devletler Genel Hukuku", "Deniz Ceza Hukuku", "Deniz Yönetim Hukuku"],
+  correctIndex: 0
+},
+
+{
+  id: 121,
+  subtitle: "DZ İŞ ve TTK",
+  question: "Aşağıdakilerden hangisi Deniz Kamu Hukuku dallarından biri değildir?",
+  options: ["Deniz Sosyal Güvenlik Hukuku", "Deniz Ticareti Hukuku", "Deniz Ceza Hukuku", "Deniz Devletler Genel Hukuku", "Deniz Yönetim Hukuku"],
+  correctIndex: 1
+},
+
+{
+  id: 122,
+  subtitle: "DZ İŞ ve TTK",
+  question: "Devletlerarası egemenlik anlaşmazlıkları ile ilgili deniz hukuku dalı aşağıdakilerden hangisidir?",
+  options: ["Deniz Devletler Genel Hukuku", "Deniz Ticareti Hukuku", "Deniz Yönetim Hukuku", "Deniz Devletler Özel Hukuku", "Deniz Ceza Hukuku"],
+  correctIndex: 0
+},
+
+{
+  id: 123,
+  subtitle: "DZ İŞ ve TTK",
+  question: "Gemi ve gemilerin seyrüseferi ile ilgili olarak kişiler arasında doğan ilişkileri düzenleyen, gemi mülkiyetine, rehine, deniz ticaretine ve deniz kazalarına ilişkin hükümleri ihtiva eden deniz hukuku dalı hangisidir?",
+  options: ["Deniz Sosyal Güvenlik Hukuku", "Deniz Sosyal Hukuku", "Deniz İdare Hukuku", "Deniz Devletler Umumi Hukuku", "Deniz Özel Hukuku"],
+  correctIndex: 4
+},
+
+{
+  id: 124,
+  subtitle: "DZ İŞ ve TTK",
+  question: "Aşağıdakilerden hangisi doğrudur?",
+  options: ["Deniz hukuku, Deniz Kamu Hukuku – Deniz Özel Hukuku olarak ikiye ayrılır", "Deniz hukuku, Deniz Özel Hukuku – Deniz İdare Hukuku olarak ikiye ayrılır", "Deniz hukuku, Deniz Ceza Hukuku – Deniz Kamu Hukuku olarak ikiye ayrılır", "Deniz hukuku, Deniz Ticareti Hukuku – Deniz Özel Hukuku olarak ikiye ayrılır", "Deniz hukuku, Deniz Ticareti Hukuku – Deniz Ceza Hukuku olarak ikiye ayrılır"],
+  correctIndex: 0
+},
+
+{
+  id: 125,
+  subtitle: "DZ İŞ ve TTK",
+  question: "Devletin yasama, yürütme ve yargı yetkilerini bütünüyle kullandığı deniz alanlarına ne denir?",
+  options: ["Kıta sahanlığı", "Münhasır Ekonomik Bölge", "Açık Deniz", "İçsular", "Karasuları"],
+  correctIndex: 4
+},
+
+{
+  id: 126,
+  subtitle: "DZ İŞ ve TTK",
+  question: "Olağanüstü haller ile ülkenin güvenliğini ilgilendiren durumlarda sıkı yönetim, seferberlik ve savaş halinde düşman uçak, gemi ve diğer muhabere elektronik vasıtalarını elektromanyetik yayınlardan seyrüsefer yardımı olarak veya istihbarat amacıyla istifade etmelerini mani olmak üzere bu yayınların geçici veya süresiz olarak durdurulmasını veya kısıtlanmasını ifade eden terim aşağıdakilerden hangisidir?",
+  options: ["Yüksek haberleşme kontrolü", "Telsiz Yayın kontrolü", "Olağanüstü hal kontrolü", "Haberleşme kontrolü", "Telsiz kontrolü"],
+  correctIndex: 1
+},
+
+{
+  id: 127,
+  subtitle: "DZ İŞ ve TTK",
+  question: "En az bir MF sahil istasyonu tarafından kaplanan ve MF/DSC uyarılarının alınabileceği GMDSS deniz alanı hangisidir?",
+  options: ["A5", "A2", "A3", "A1", "A4"],
+  correctIndex: 1
+},
+
+{
+  id: 128,
+  subtitle: "DZ İŞ ve TTK",
+  question: "Türk Ticaret Kanununun 934.maddesi uyarınca aşağıdakilerden hangisi gemi adamlarından değildir?",
+  options: ["Kaptan", "Çamaşırcı", "Tayfa", "Kılavuz", "Gemi Zabıtleri"],
+  correctIndex: 3
+},
+
+{
+  id: 133,
+  subtitle: "DZ İŞ ve TTK",
+  question: "Aşağıdakilerden hangisi Türk Ticaret Kanunu uyarınca geminin unsurlarından değildir?",
+  options: ["Suda hareket etme kabiliyetinin olması", "Pek küçük olmaması", "Tahsis edildiği amacın denizde hareketi gerekli kılması", "Ticari kazanç gayesi bulunması", "Yüzme kabiliyetinin bulunması"],
+  correctIndex: 3
+},
+
+{
+  id: 134,
+  subtitle: "DZ İŞ ve TTK",
+  question: "6102 sayılı (yeni) Türk Ticaret Kanunu md.931’e göre aşağıdakilerden hangisi “gemi” tanımının unsurlarından değildir?",
+  options: ["Suda hareket etmek amacına tahsis edilmesi", "Pek küçük olmaması", "Yüzme özelliği bulunması", "Taşıma yapma gerekliliğinin olması", "Kendiliğinden hareket etmesinin gerekmemesi"],
+  correctIndex: 3
+},
+
+{
+  id: 135,
+  subtitle: "DZ İŞ ve TTK",
+  question: "Aşağıdakilerden hangisi ticaret gemisinin esas unsurlarından değildir?",
+  options: ["Münhasıran kamu hizmetinin ifasına tahsis edilmiş olmak", "Deniz yoluyla menfaat sağlama amacına tahsis olmak", "Denizde menfaat sağlama amacını gütmek", "Deniz yoluyla menfaat sağlamak üzere fiilen kullanılmak", "Malik veya işletenin, ad ve hesabına yük ve yolcu taşımak"],
+  correctIndex: 0
+},
+
+{
+  id: 137,
+  subtitle: "DZ İŞ ve TTK",
+  question: "Aşağıdaki örneklerden hangisi 6102 sayılı Türk Ticaret Kanunu’na göre teknik kusurdur?",
+  options: ["Yükün havalandırılmaması", "Yükün gemi personeli tarafından çalınması", "Yükün uygun istiflenmemesi", "Köprüüstü vardiyasında vardiya zabitinin uykuya dalması", "Gecikmeden dolayı yükte meydana gelen kurtarma zararı"],
+  correctIndex: 3
+},
+
+{
+  id: 138,
+  subtitle: "DZ İŞ ve TTK",
+  question: "Ticari yatlarda NAVTEX cihazı bulundurulması ile ilgili aşağıdakilerden hangisi doğrudur?",
+  options: ["300 GT ve üzeri veya 12 ila 36 arası yolcu taşıyan yakın sefer ve uzak sefer yapan teknelerde bulundurulması zorunludur", "300 GT ve üzerindeki tüm teknelerde sefer bölgesine bakılmaksızın bulundurma zorunluluğu vardır", "12 üzerinde yolcu taşıyan tüm teknelerde sefer bölgesine bakılmaksızın bulundurma zorunluluğu vardır", "Kabotaj seferi yapan tüm teknelerde bulundurulması zorunludur", "Yakın sefer yapan teknelerde bulundurma zorunluluğu yoktur"],
+  correctIndex: 0
+},
+
+{
+  id: 139,
+  subtitle: "DZ İŞ ve TTK",
+  question: "Aşağıdakilerden hangisi Kaptan’ı tanımlar?",
+  options: ["Donatan veya donatma iştirakinde müşterek donatanlar tarafından tayin edilen ve kendisine Kamu Hukuku’na ve Özel Hukuk’a ilişkin görevler verilen kişidir", "Donatan adına gemide hareket eden kişidir", "Gerekli yeterlik belgesini haiz olup gemiyi sevk ve idare eden kişidir", "Gemide sadece güverteden sorumludur", "Donatanın gemilerini teknik ve idari bakımdan donatan adına denetleyen yetkili kişidir"],
+  correctIndex: 2
+},
+
+{
+  id: 140,
+  subtitle: "DZ İŞ ve TTK",
+  question: "Aşağıdakilerden hangisi “Kabotaj Hakkı”nın tanımıdır?",
+  options: ["Bir devletin kendi karasuları içerisinde ve dışında deniz ticareti yapabilmek yetkisini ve hakkını sadece vatandaşlarına ve kendi bayrağını taşıyan gemilere tanıması", "Bir devletin kendi karasuları içinde ve dışında yük taşıma yetkisini ve hakkını sadece kendi vatandaşlarına ve kendi bayrağını taşıyan gemilere tanıması", "Bir devletin kendi karasuları dışında sularda deniz ticareti yapabilmek yetkisini ve hakkını sadece kendi vatandaşlarına ve kendi bayrağını taşıyan gemilere tanıması", "Bir devletin kendi karasuları içinde taşıma, dışında ise sair taşıma yetkisini ve hakkını sadece kendi vatandaşlarına ve kendi bayrağını taşıyan gemilere tanıması", "Bir devletin kendi karasuları içerisinde deniz ticareti yapabilmek yetkisini ve hakkını sadece kendi vatandaşlarına ve kendi bayrağını taşıyan gemilere tanıması"],
+  correctIndex: 2
+},
+
+{
+  id: 141,
+  subtitle: "DZ İŞ ve TTK",
+  question: "Türk Hukukunda aşağıdakilerden hangisi yanlıştır?",
+  options: ["Sadece geminin sahibi olan kimseler donatandır ve işveren sayılır", "Türk Ticaret Kanunu açısından kendisinin olmayan bir gemiyi kendi adına deniz ticaretinde bizzat veya kaptan marifetiyle kullanan kimse donatan kabul edilir", "Türk Ticaret Kanunu açısından gemisini deniz ticaretinde kullanan gemi sahibine donatan denir", "Deniz İş Kanunu açısından gemi sahibine veya kendisinin olmayan bir gemiyi kendi adına işleten kimseye işveren denir", "Türk Ticaret Kanunu açısından gemiyi, aralarında mülkiyet sözleşme gereği deniz ticaretinde kendi nam ve hesabına kullananlar donatma iştiraki hükümlerine tabidir"],
+  correctIndex: 0
+},
+
+{
+  id: 142,
+  subtitle: "DZ İŞ ve TTK",
+  question: "854 sayılı Deniz İş Kanunu ve 6102 sayılı Türk Ticaret Kanununa göre aşağıdakilerden hangisi yanlıştır?",
+  options: ["Deniz İş Kanunu açısından gemi sahibine veya kendisinin olmayan bir gemiyi kendi adına ve hesabına işleten kimse işveren denir", "Türk Ticaret Kanunu açısından gemisini menfaat sağlamak amacıyla suda kullanan gemi sahibine donatan denir", "Türk Ticaret Kanunu açısından kendisinin olmayan bir gemiyi menfaat sağlamak amacıyla kendi adına bizzat veya kaptan marifetiyle kullanan kişi, üçüncü kişilerle olan ilişkilerinde donatan kabul edilir", "Donatma iştirakinde paydaş olanlar donatan kabul edilir ve işveren sayılır", "Sadece geminin sahibi olan kimseler donatandır ve işveren sayılır"],
+  correctIndex: 4
+},
+
+{
+  id: 143,
+  subtitle: "DZ İŞ ve TTK",
+  question: "Deniz İş Kanunu;",
+  options: ["Bükreş sözleşmesine göre sadece bu anlaşmaya taraf devlet vatandaşlarına uygulanır", "Aynı zamanda hem TC hem yabancı devlet vatandaşı olanlara uygulanır", "Bütün yabancı gemi adamlarına uygulanır", "Mütekabiliyet esaslarına göre sadece Avrupa devletleri vatandaşlarına uygulanır", "Mütekabiliyet esaslarına göre, Türk gemi adamlarına aynı mahiyette haklar tanıyan devletlerin uyruğunda olan bu Kanun kapsamına giren gemilerde çalışan gemi adamlarına uygulanır"],
+  correctIndex: 4
+},
+
+{
+  id: 147,
+  subtitle: "KURULUŞLAR",
+  question: "Tam boyu 24 metreden küçük gemilerin “Denize Elverişlilik” denetimini yapmaya aşağıdaki kuruluşların hangisi yetkilidir?",
+  options: ["Bölge Müdürlükleri Sörvey kurulları", "Yüksek okul mezunu liman başkanları", "Devlet Denetleme Kurulu", "Marmara Bölge Müdürlüğü sörvey kurulu", "Liman Başkanlıkları"],
+  correctIndex: 4
+},
+
+{
+  id: 148,
+  subtitle: "KURULUŞLAR",
+  question: "Gemilerin Teknik Yönetmeliği uyarınca; tam boyu 24 metreye kadar gemilerin “Denize Elverişlilik” denetimini yapmaya aşağıdaki kuruluşların hangisi yetkilidir?",
+  options: ["Marmara Bölge Müdürlüğü Sörvey Kurulu", "Yüksek Okul mezunu liman başkanları", "Bölge Müdürlükleri Sörvey Kurulları", "Devlet Denetleme Kurulu", "Liman Başkanlıkları"],
+  correctIndex: 4
+},
+
+{
+  id: 151,
+  subtitle: "KURULUŞLAR",
+  question: "Denizlerimizin kirlenmesine karşı idari ve cezai yaptırımlar hangi Ulusal Mevzuatımızda düzenlenmiştir?",
+  options: ["2872 sayılı Çevre Kanunu", "815 sayılı Kabotaj Kanunu", "MARPOL 73/78", "618 sayılı Limanlar Kanunu", "4922 sayılı Denizde Can ve Mal Koruma Hakkında Kanun"],
+  correctIndex: 0
+},
+
+{
+  id: 152,
+  subtitle: "KURULUŞLAR",
+  question: "Sağlık resmi geminin hangi ölçü birimi üzerinden alınmaktadır?",
+  options: ["DWT", "GDP", "GRT", "Net ton", "RT"],
+  correctIndex: 3
+},
+
+{
+  id: 154,
+  subtitle: "KURULUŞLAR",
+  question: "Aşağıdakilerden hangisi Liman Başkanlığının almış olduğu ücretlerden biridir?",
+  options: ["Sağlık resmi", "Fener ücreti", "Tahliye ücreti", "Stevedor ücreti", "Demirleme ücreti"],
+  correctIndex: 4
+},
+
+{
+  id: 157,
+  subtitle: "KURULUŞLAR",
+  question: "Yetki verilen liman başkanlıklarının denizlerimizin kirlenmesine karşı idari ve cezai yaptırım yetkileri konusunda aşağıdaki seçeneklerden hangisi yanlıştır?",
+  options: ["Liman başkanlığının görev, yetki sahasının her noktasında", "Balıkçı barınaklarında", "Mendirekli limanlarda her iki mendirek ucunu birleştiren hattın sahile doğru iç kısmında kalan deniz alanında", "Liman başkanlığı yetkisinde bulunan iskele ve rıhtımlarda", "Yat limanlarında"],
+  correctIndex: 0
+},
+
+{
+  id: 158,
+  subtitle: "KURULUŞLAR",
+  question: "Ülkemizde frekans tahsis ve tescil işlemleri aşağıda verilen hangi kurum/kuruluş tarafından yapılmaktadır?",
+  options: ["Bilgi Teknolojileri ve İletişim Kurumu", "Genel Kurmay Başkanlığı", "Başbakanlık", "Telsiz İşletme Müdürlüğü", "Ulaştırma Bakanlığı"],
+  correctIndex: 0
+},
+
+{
+  id: 159,
+  subtitle: "KURULUŞLAR",
+  question: "Kodlu ve kriptolu haberleşme yapma usulü ve esasları aşağıdaki belirtilen hangi kurum/kuruluş tarafından belirlenmektedir?",
+  options: ["Ulaştırma Bakanlığı", "Genel Kurmay Başkanlığı", "Millî İstihbarat Teşkilatı", "Bilgi Teknolojileri ve İletişim Kurumu", "Telsiz İşletme Müdürlüğü"],
+  correctIndex: 3
+},
+
+{
+  id: 160,
+  subtitle: "KURULUŞLAR",
+  question: "Ülkemizde Kıyı Telsiz istasyonlarının kurulması ve işletimini sağlayan kurum aşağıdakilerden hangisidir?",
+  options: ["Uluslararası Telekomünikasyon Birliği", "Liman Başkanlıkları", "Denizcilik Bölge Müdürlükleri", "Kıyı Emniyeti Genel Müdürlüğü", "Ulaştırma ve Altyapı Bakanlığı"],
+  correctIndex: 3
+},
+
+{
+  id: 161,
+  subtitle: "GEMİ BELGELERİ",
+  question: "Bağlama Kütüğü Uygulama Yönetmeliği gereğince kaç metreden küçük gemiler bağlama kütüğüne kayıt edilmez?",
+  options: ["4.5", "3.5", "3", "4", "2.5"],
+  correctIndex: 4
+},
+
+{
+  id: 163,
+  subtitle: "GEMİ BELGELERİ",
+  question: "Hangi gemi Türk Bayrağı çekmek için Gemi Tasdiknamesi/Bayrak Şahadetnamesi alır?",
+  options: ["Gezinti yatları", "Spor gemileri", "Bilimsel gemiler", "18 GT altı", "Liman içi yolcu"],
+  correctIndex: 4
+},
+
+{
+  id: 169,
+  subtitle: "GEMİ BELGELERİ",
+  question: "Denize Elverişlilik Belgesi olmayan gemi ne yapamaz?",
+  options: ["Yolcu taşıyamaz", "Hareket edemez", "Yük taşıyamaz", "Liman çıkışı", "Yük taşır"],
+  correctIndex: 1
+},
+
+{
+  id: 172,
+  subtitle: "GEMİ BELGELERİ",
+  question: "Sefer sırasında süresi biten belge için hangisi yanlıştır?",
+  options: ["Denetim limanına gider", "Ticari işlem yapar", "Yük boşaltır", "Emniyet sağlanır", "Belge yenilenmeden devam"],
+  correctIndex: 0
+},
+
+{
+  id: 174,
+  subtitle: "GEMİ BELGELERİ",
+  question: "Telsiz istasyonu ruhsatnamesi kaç yıl geçerlidir?",
+  options: ["5", "1", "2", "3", "4"],
+  correctIndex: 0
+},
+
+{
+  id: 178,
+  subtitle: "GEMİ BELGELERİ",
+  question: "Milli Gemi Siciline hangileri tescil edilir?",
+  options: ["18 GT altı", "Kamu", "Harp", "18 GT üstü Türk ticari", "Yabancı"],
+  correctIndex: 0
+},
+
+{
+  id: 181,
+  subtitle: "GEMİ BELGELERİ",
+  question: "Gemi sicili hangisini düzenlemez?",
+  options: ["Mülkiyet", "İpotek", "İntifa", "Gemiadamı sayısı", "Rehin"],
+  correctIndex: 0
+},
+
+{
+  id: 182,
+  subtitle: "GEMİ BELGELERİ",
+  question: "Gemi sicilleri hangi yargı merci gözetimindedir?",
+  options: ["Asliye Hukuk", "Asliye Ticaret", "Deniz İş", "İdare", "Sulh"],
+  correctIndex: 4
+},
+
+{
+  id: 183,
+  subtitle: "GEMİ BELGELERİ",
+  question: "301 GT uluslararası gemide her zaman bulunması gereken sertifika?",
+  options: ["Radyo", "CSR", "Teçhizat", "Hava kirliliği", "İnşa"],
+  correctIndex: 1
+},
+
+{
+  id: 185,
+  subtitle: "GEMİ BELGELERİ",
+  question: "SOLAS II-1,II-2,III,IV uygunluğunu gösteren belge?",
+  options: ["Yük gemisi inşa", "Yük gemisi teçhizat", "Yolcu gemisi", "IOPP", "SMC"],
+  correctIndex: 1
+},
+
+{
+  id: 188,
+  subtitle: "GEMİ BELGELERİ",
+  question: "Deniz raporu nereden alınır?",
+  options: ["Mahkeme", "Noter", "Liman Başkanlığı", "Liman işletmesi", "Gümrük"],
+  correctIndex: 0
+},
+
+{
+  id: 190,
+  subtitle: "GEMİ BELGELERİ",
+  question: "CAS SoC belgesini kimler düzenler?",
+  options: ["IMO", "Tanınmış kuruluş", "Yetkili klas", "b ve c", "Bayrak devleti"],
+  correctIndex: 3
+},
+
+{
+  id: 191,
+  subtitle: "GEMİ BELGELERİ",
+  question: "Bayrak Şahadetnamesi kaç yıl geçerlidir?",
+  options: ["1", "3", "2", "5", "4"],
+  correctIndex: 0
+},
+
+{
+  id: 192,
+  subtitle: "GEMİ BELGELERİ",
+  question: "18 yaş altı gemiadamı sağlık yoklaması kaç yılda bir?",
+  options: ["2", "5", "Zorunlu değil", "Her yıl", "3"],
+  correctIndex: 3
+},
+
+{
+  id: 193,
+  subtitle: "GEMİ BELGELERİ",
+  question: "Liman çıkış belgesi normal geçerlilik süresi?",
+  options: ["DEB süresi", "Seferlik", "1 yıl", "3 ay", "6 ay"],
+  correctIndex: 1
+},
+
+{
+  id: 194,
+  subtitle: "GEMİ BELGELERİ",
+  question: "ISM Interim DoC azami süresi?",
+  options: ["6 ay", "12 ay", "3 ay", "9 ay", "15 ay"],
+  correctIndex: 1
+},
+
+{
+  id: 196,
+  subtitle: "GEMİ BELGELERİ",
+  question: "SOLAS-88’e göre yolcu gemisi sertifikası kaç yılda yenilenir?",
+  options: ["2", "4", "3", "Her yıl", "5"],
+  correctIndex: 3
+},
+
+{
+  id: 197,
+  subtitle: "GEMİ BELGELERİ",
+  question: "Denize elverişlilik belgesi kaç yıllık düzenlenir?",
+  options: ["5", "1", "2", "3", "4"],
+  correctIndex: 0
+},
+
+{
+  id: 198,
+  subtitle: "GEMİ BELGELERİ",
+  question: "DEB azami süresi (yıllık vize ile)?",
+  options: ["6 ay", "2 yıl", "Seferlik", "5 yıl", "1 yıl"],
+  correctIndex: 3
+},
+
+{
+  id: 199,
+  subtitle: "GEMİ BELGELERİ",
+  question: "DEB geçerlilik süresi nedir?",
+  options: ["Seferlik", "Klas tarihine", "3 ay", "6 ay", "Azami 5 yıl"],
+  correctIndex: 4
+},
+
+{
+  id: 200,
+  subtitle: "GEMİ BELGELERİ",
+  question: "Asgari emniyet belgesi geçerlilik süresi?",
+  options: ["1 yıl", "2 yıl", "3 yıl", "5 yıl", "Süresiz"],
+  correctIndex: 3
+},
+
+{
+  id: 204,
+  subtitle: "GEMİ BELGELERİ",
+  question: "PSC kontrol raporları geçerlilik süresi?",
+  options: ["15 gün", "30 gün", "45 gün", "3 ay", "6 ay"],
+  correctIndex: 4
+},
+
+{
+  id: 208,
+  subtitle: "YÜK ŞÖZLEŞMELERİ",
+  question: "Voyage Charter alanında kullanılan çarter parti türü hangisidir?",
+  options: ["Liner time", "Baltime", "NYPE", "Intertanktime", "Gencon"],
+  correctIndex: 4
+},
+
+{
+  id: 215,
+  subtitle: "YÜK ŞÖZLEŞMELERİ",
+  question: "SSHINC kısaltması ne anlama gelir?",
+  options: ["Tatiller sayılmaz", "Her gün çalışılır", "Tatillerde elleçleme yok", "Fazla ücret", "Tatiller hariç"],
+  correctIndex: 1
+},
+
+{
+  id: 216,
+  subtitle: "YÜK ŞÖZLEŞMELERİ",
+  question: "24 saat kesintisiz starya günü hangi kısaltmadır?",
+  options: ["SHINC", "WWD", "SHEX", "WD", "FIOS"],
+  correctIndex: 2
+},
+
+{
+  id: 217,
+  subtitle: "YÜK ŞÖZLEŞMELERİ",
+  question: "TTK’ya göre kıymetli evrak hangisidir?",
+  options: ["Manifesto", "Yükleme Konşimentosu", "Yük senedi", "Ordino", "Tesellüm Konşimentosu"],
+  correctIndex: 1
+},
+
+{
+  id: 226,
+  subtitle: "YÜK ŞÖZLEŞMELERİ",
+  question: "Hazırlık bildirimi ne zaman verilir?",
+  options: ["Seyirde", "Her zaman", "Mukavele", "İlk liman", "Yükleme limanında"],
+  correctIndex: 4
+},
+
+{
+  id: 228,
+  subtitle: "YÜK ŞÖZLEŞMELERİ",
+  question: "NOR sonrası 24 saat bitimi starya dışına denk gelirse ne olur?",
+  options: ["İlk mesai+1", "Hiçbiri", "24 saat sonra", "Gece 24", "İlk mesai başı"],
+  correctIndex: 4
+},
+
+{
+  id: 239,
+  subtitle: "YÜK ŞÖZLEŞMELERİ",
+  question: "Sigorta bedeli yüksekse ne denir?",
+  options: ["Poliçe dışı", "Aşkın sigorta", "Normal", "Aykırı", "Eksik"],
+  correctIndex: 1
+},
+
+{
+  id: 241,
+  subtitle: "YÜK ŞÖZLEŞMELERİ",
+  question: "Sigortacının tazminat talep hakkı neye dayanır?",
+  options: ["Riziko", "Halefiyet", "Sigortacı hakkı", "Garame", "Temsil"],
+  correctIndex: 1
+},
+
+{
+  id: 242,
+  subtitle: "YÜK ŞÖZLEŞMELERİ",
+  question: "Halefiyet hangi durumda vardır?",
+  options: ["Hasara katılım", "Rücu", "Azami teminat", "Yakın sebep", "İlliyet"],
+  correctIndex: 1
+},
+
+{
+  id: 244,
+  subtitle: "YÜK ŞÖZLEŞMELERİ",
+  question: "Kulüp sigortası feshi ne zamana kadar bildirilir?",
+  options: ["20 Mart", "20 Aralık", "Hiçbiri", "20 Ocak", "20 Şubat"],
+  correctIndex: 4
+},
+
+{
+  id: 245,
+  subtitle: "YÜK ŞÖZLEŞMELERİ",
+  question: "Kulüp sigortası için ne yeterlidir?",
+  options: ["Mahkeme", "Başvuru", "Noter", "Kabul", "Sicil"],
+  correctIndex: 3
+},
+
+{
+  id: 247,
+  subtitle: "YÜK ŞÖZLEŞMELERİ",
+  question: "Müşterek avarya şartı değildir?",
+  options: ["Müşterek tehlike", "Direniş", "Olağanüstü fedakarlık", "Makul hareket", "Olağanüstü masraf"],
+  correctIndex: 1
+},
+
+{
+  id: 248,
+  subtitle: "YÜK ŞÖZLEŞMELERİ",
+  question: "Müşterek avarya unsuru değildir?",
+  options: ["İradi", "Müşterek sergüzeşt", "Faydalı netice", "Makul fedakarlık", "Direniş"],
+  correctIndex: 4
+},
+
+{
+  id: 249,
+  subtitle: "YÜK ŞÖZLEŞMELERİ",
+  question: "Müşterek avarya unsuru değildir?",
+  options: ["Direniş", "Müşterek tehlike", "Fedakarlık", "İradi", "Fayda"],
+  correctIndex: 0
+},
+
+{
+  id: 250,
+  subtitle: "YÜK ŞÖZLEŞMELERİ",
+  question: "Çatmanın unsuru değildir?",
+  options: ["Fiili çatma", "Gemi niteliği", "Zarar", "Hukuki ilişki yok", "Direniş"],
+  correctIndex: 4
+},
+
+{
+  id: 251,
+  subtitle: "YÜK ŞÖZLEŞMELERİ",
+  question: "TTK’ya göre aranmayan unsur hangisidir?",
+  options: ["Faydalı netice", "İradi", "Olağanüstü fedakarlık", "Müşterek tehlike", "Donatan onayı"],
+  correctIndex: 4
+},
+
+{
+  id: 253,
+  subtitle: "YÜK ŞÖZLEŞMELERİ",
+  question: "Dispç alacaklı masasında yer almaz?",
+  options: ["Navlun zararı", "Fevkalade masraf", "Yük zararı", "Yolculuk değeri", "Gemi zararı"],
+  correctIndex: 0
+},
+
+{
+  id: 254,
+  subtitle: "İŞ SÖZLEŞMELERİ",
+  question: "Gemi adamlarının gemilerde minimum çalışma yaşı aşağıdakilerden hangisidir?",
+  options: ["15", "17", "19", "16", "18"],
+  correctIndex: 3
+},
+
+{
+  id: 255,
+  subtitle: "İŞ SÖZLEŞMELERİ",
+  question: "Hangisi gemi adamının kanuni haklarından birisidir?",
+  options: ["Gemiye gelmeme", "Kimlik kartı verilmesi", "Sigara kullanma", "Yurda iade", "İçki kullanma"],
+  correctIndex: 3
+},
+
+{
+  id: 256,
+  subtitle: "İŞ SÖZLEŞMELERİ",
+  question: "Deniz İş Kanunu’na göre yabancı gemi adamının iade edileceği yer neresidir?",
+  options: ["Varılacak ilk liman", "Bağlama limanı", "İkametgâhının bulunduğu liman", "Geminin sicil kaydının bulunduğu liman", "Geminin donatanının bulunduğu liman"],
+  correctIndex: 2
+},
+
+{
+  id: 257,
+  subtitle: "İŞ SÖZLEŞMELERİ",
+  question: "Personelin kişisel haklarından olan iaşe ve ibate kelimeleri neyi ifade eder?",
+  options: ["Ücretinin ve maaşının sağlanması", "Yiyeceğinin ve kalacak yerinin sağlanması", "Maaşının ve kalacak yerinin sağlanması", "Yiyeceğinin ve içeceğinin sağlanması", "Sigorta primlerinin yatırılması"],
+  correctIndex: 1
+},
+
+{
+  id: 259,
+  subtitle: "İŞ SÖZLEŞMELERİ",
+  question: "854 sayılı Deniz İş Kanunu’na göre gemi adamları hizmet mukavelesinde aşağıdakilerden hangisi zorunlu değildir?",
+  options: ["Yazılı olması", "İşverenin adının yer alması", "Gemi adamının adının yer alması", "Sözleşmenin yapıldığı yer ve tarih", "Kefilin adı ve adresi"],
+  correctIndex: 4
+},
+
+{
+  id: 260,
+  subtitle: "İŞ SÖZLEŞMELERİ",
+  question: "İşveren sendikalı ve sendikasız işçiler arasında hangi maddede takdir hakkına haizdir?",
+  options: ["İşin sevk ve dağılımında ayrım yapabilir", "Mesleki ilerlemede ayrım yapamaz", "İşin ücretinde ayrım yapamaz", "Sosyal yardımlarda ayrım yapamaz", "İşe son verilmesinde ayrım yapamaz"],
+  correctIndex: 0
+},
+
+{
+  id: 261,
+  subtitle: "İŞ SÖZLEŞMELERİ",
+  question: "Belirli süre için yapılan gemi adamı hizmet akdi gemi seyirde iken sona ererse aşağıdakilerden hangisi doğrudur?",
+  options: ["Geminin ilk varma limanına varmasına ve güvenlik altına alıncaya kadar iş akdi uzatılmış sayılır", "Son tahliye limanına varana kadar iş akdi uzatılmış sayılır", "İş akdi seferin son limanına kadar uzatılmış sayılır", "İş akdi o anda sona erer", "Bağlama limanına dönene kadar iş akdi uzatılmış sayılır"],
+  correctIndex: 0
+},
+
+{
+  id: 264,
+  subtitle: "İŞ SÖZLEŞMELERİ",
+  question: "854 sayılı Deniz İş Kanunu’nun hükümlerine göre aşağıdaki gemilerden hangisinde bir hizmet akdi ile çalışan gemiadamına uygulanır?",
+  options: ["Sadece Ege denizinde sefer yapan Türk veya yabancı bayrak taşıyan yolcu gemisinde çalışan gemiadamına", "Yüz veya daha yukarı gros tonluk Türk veya yabancı bayrak taşıyan gemide çalışan gemiadamına", "İç sularda tarama faaliyeti yapan Türk veya yabancı bayrak taşıyan gemide çalışan gemiadamına", "Türk karasularında yük taşıması yapan Türk veya yabancı bayrak taşıyan tankerle çalışan gemiadamına", "Açık denizlerde gemi söküm faaliyetinde bulunan 400 gros tonluk Türk bayraklı römorkörde çalışan gemiadamına"],
+  correctIndex: 1
+},
+
+{
+  id: 265,
+  subtitle: "İŞ SÖZLEŞMELERİ",
+  question: "854 sayılı Deniz İş Kanunu’na göre gemi adamının genel bakımdan iş süresi haftada kaç saattir?",
+  options: ["42", "40", "45", "48", "56"],
+  correctIndex: 3
+},
+
+{
+  id: 267,
+  subtitle: "İŞ SÖZLEŞMELERİ",
+  question: "Fazla çalışma süresi günde kaç saati geçemez?",
+  options: ["7", "3", "2", "6", "5"],
+  correctIndex: 1
+},
+
+{
+  id: 269,
+  subtitle: "İŞ SÖZLEŞMELERİ",
+  question: "Aşağıdakilerden hangisi fazla çalışma sayılır?",
+  options: ["Kaptanın gümrükle ilgili işlemler nedeniyle yapılmasını zorunlu gördüğü işler", "Kaptanın donatanın menfaati için yapılmasını zorunlu gördüğü işler", "Kaptanın gemi adamlarının menfaati için yapılmasını zorunlu gördüğü işler", "Kaptanın yükün selameti için yapılmasını zorunlu gördüğü işler", "Kaptanın geminin selameti için yapılmasını zorunlu gördüğü işler"],
+  correctIndex: 1
+},
+
+{
+  id: 271,
+  subtitle: "İŞ SÖZLEŞMELERİ",
+  question: "Gemide 6 ay çalışmış bir gemi adamı en az kaç günlük izin hak etmiştir?",
+  options: ["60 Günlük", "30 Günlük", "20 Günlük", "10 Günlük", "15 Günlük"],
+  correctIndex: 4
+},
+
+{
+  id: 272,
+  subtitle: "İŞ SÖZLEŞMELERİ",
+  question: "854 sayılı Deniz İş Kanunu’na göre, 10 ay çalışan bir gemi adamı için yıllık izin süresi en az ne kadardır?",
+  options: ["10 gün", "15 gün", "20 gün", "25 gün", "30 gün"],
+  correctIndex: 1
+},
+
+{
+  id: 273,
+  subtitle: "İŞ SÖZLEŞMELERİ",
+  question: "Deniz İş Kanunu’na göre yıllık izin süresi 18 ay çalışan bir gemi adamı için en az ne kadardır?",
+  options: ["15 gün", "40 gün", "45 gün", "1 ay", "2 ay"],
+  correctIndex: 3
+},
+
+{
+  id: 274,
+  subtitle: "İŞ SÖZLEŞMELERİ",
+  question: "Kıdem tazminatına hak kazanılabilmesi için asgari çalışma süresi ne kadardır?",
+  options: ["6 ay", "12 ay", "2 yıl", "3 yıl", "5 yıl"],
+  correctIndex: 1
+},
+
+{
+  id: 282,
+  subtitle: "İŞ SÖZLEŞMELERİ",
+  question: "Gemi adamlarının ücretlerini alamamaları ve talep etmeleri durumunda gemi üzerinden imtiyazlı olarak alabilmelerine hukuki terminolojide ne denir?",
+  options: ["İşveren alacaklısı hakkı", "Yük alacaklısı hakkı", "Deniz alacağı hakkı", "Gemi alacaklısı hakkı", "İşçi alacaklısı hakkı"],
+  correctIndex: 3
+},
+
+{
+  id: 283,
+  subtitle: "İŞ SÖZLEŞMELERİ",
+  question: "Kıdem tazminatında gecikme faizi ne kadar olabilir?",
+  options: ["Bankalararası en yüksek faiz", "%10", "TÜFE enflasyon oranı", "Mevduata uygulanan en yüksek faiz", "%30"],
+  correctIndex: 3
+},
+
+{
+  id: 284,
+  subtitle: "İŞ SÖZLEŞMELERİ",
+  question: "854 sayılı Deniz İş Kanunu’na göre gemiadamının hak etmiş olduğu kıdem tazminatı için aşağıdakilerden hangisi yanlıştır?",
+  options: ["Kıdem tazminatının hesabında son yılın ortalama aylığı esas alınır", "Son bir yıl içinde işçi ücretine zam yapıldığı takdirde esas ücret, gemiadamının işten ayrılma tarihini izleyen süre içinde çalışılan günlere bölünmesi suretiyle hesaplanır", "Kıdem tazminatının hesabında sefer, parça başı, akord, götürü veya yüzde usulü gibi ücretin sabit olmadığı hallerde son bir yıllık sürede ödenen ücretin o süre içinde çalışılan günlere bölünmesi suretiyle hesaplanır", "Aynı kıdem süresi için bir defadan fazla kıdem tazminatı veya ikramiye ödenmez", "Kıdem tazminatının hesabında son aylık ücret esas alınır"],
+  correctIndex: 0
+},
+
+{
+  id: 285,
+  subtitle: "İŞ SÖZLEŞMELERİ",
+  question: "Aşağıdakilerden hangisi kaptanın iş akdinin sona erme sebeplerinden değildir?",
+  options: ["Donatanın, gemi adamının ücretini ödememesi", "Geminin kaybı", "Geminin bayrak çekme hakkının kaybı", "Geminin isminin değiştirilmesi", "Geminin enkaz haline gelmesi"],
+  correctIndex: 3
+},
+
+{
+  id: 286,
+  subtitle: "İŞ SÖZLEŞMELERİ",
+  question: "854 sayılı Deniz İş Kanunu’na göre aşağıdakilerden hangisi kaptanın hizmet sözleşmesinin sona erme sebeplerinden değildir?",
+  options: ["Geminin kaybı", "Geminin Türk bayrağından ayrılması", "Donatanın ücret ödememesi", "Feshi ihbar", "Geminin isminin değiştirilmesi"],
+  correctIndex: 4
+},
+
+{
+  id: 287,
+  subtitle: "İŞ SÖZLEŞMELERİ",
+  question: "854 sayılı Deniz İş Kanunu’na göre iş akdinin yurt dışında feshi halinde hizmet akdinde başka bir hüküm bulunmadıkça gemi adamının iade edileceği yer neresidir?",
+  options: ["Gemi adamının ikametgâh yeri", "Geminin bağlama limanı", "Gemi adamının ikametgâhının bulunduğu yere en yakın liman", "Geminin sicil kaydının olduğu liman", "Geminin ikmal yapacağı liman"],
+  correctIndex: 1
+},
+
+{
+  id: 289,
+  subtitle: "İŞ SÖZLEŞMELERİ",
+  question: "Aşağıdakilerden hangisi 854 sayılı Deniz İş Kanununa göre işverenin ihbarsız fesih sebeplerinden biri değildir?",
+  options: ["Gemiadamının limanda geminin hareketinden önce gemiye gelmemesi", "Gemiadamının tutuklanması", "Gemiadamının sürekli ahlaka aykırı davranışlarda bulunması", "Gemiadamının işverene karşı kanuna aykırı hareket etmesi", "Gemiadamının sefer esnasında avans talebinde bulunması"],
+  correctIndex: 4
+},
+
+{
+  id: 292,
+  subtitle: "İŞ SÖZLEŞMELERİ",
+  question: "854 sayılı Deniz İş Kanununun md.14 hükmü uyarınca, aşağıdaki hangi durumda gemiadamının hizmet akdi işveren tarafından ihbarsız (önelsiz) feshedilemez?",
+  options: ["İşveren, geminin herhangi bir sebeple 30 günden fazla bir süre seferden men olduğunu ispat etmiş ise", "İşveren, gemiadamının hizmet akdinde belirtilen şartlara aykırı davrandığını ispat etmiş ise", "İşveren, gemiadamının denizcilik kurallarına ve denizcilik örf ve adetine aykırı hareket ettiğini ispat etmiş ise", "İşveren, gemiadamının görevinde yetersiz ve beklenen çalışma gayreti içinde olmadığını ispat etmiş ise", "İşveren, gemiadamının herhangi bir sebeple sürekli olarak gemide çalışmasına engel bir hastalığa yakalandığını ispat etmiş ise"],
+  correctIndex: 3
+},
+
+{
+  id: 293,
+  subtitle: "İŞ SÖZLEŞMELERİ",
+  question: "Aşağıdakilerden hangisi gemiadamı tarafından hizmet sözleşmesinin bildirimsiz olarak feshedilebileceği durumlardan değildir?",
+  options: ["İşveren veya işveren vekilinin gemiadamına karşı ahlak ve adaba aykırı davranışı", "Geminin bakım ve onarıma girmesi", "Ücretin ödenmemesi", "İşveren veya işveren vekilinin iş sözleşmesi şartlarına aykırı davranması", "İşveren veya vekilinin gemiadamına karşı kanunsuz hareketi"],
+  correctIndex: 1
+},
+
+{
+  id: 295,
+  subtitle: "İŞ SÖZLEŞMELERİ",
+  question: "854 sayılı Deniz İş Kanunu kapsamında süreli veya süresiz yahut da sefer üzerine yapılan hizmet akdi hangi durumda hem işveren veya işveren vekili tarafından hem de gemiadamı tarafından feshedilebilir?",
+  options: ["Gemiadamının herhangi bir sebeple sürekli olarak gemide çalışmasına engel bir hastalığa yakalanması", "Gemiadamının gemide hizmet görmesinin tutukluluk, hapis veya gemide çalışmaktan men edilmesi sebebiyle imkansız bir hal alması", "Gemiadamının herhangi bir limanda geminin hareketinden önce gemiye dönerek hizmete girmemesi", "Gemiadamının işveren veya işveren vekiline karşı, kanuna, hizmet akitlerine dair iş ve çalışma şartlarına aykırı hareket etmesi", "Gemiadamının işveren veya işveren vekiline karşı denizcilik örf ve teamüllerine ve ahlaka aykırı hareket etmesi"],
+  correctIndex: 0
+},
+
+{
+  id: 296,
+  subtitle: "İŞ SÖZLEŞMELERİ",
+  question: "Deniz İş Kanununa göre, taraflarca fesih yetkisi sebebin öğrenilmesinden itibaren ne kadar sürede kullanılmalıdır?",
+  options: ["10 iş günü", "1 yıl", "2 yıl", "6 iş günü", "15 iş günü"],
+  correctIndex: 3
+},
+
+{
+  id: 297,
+  subtitle: "İŞ SÖZLEŞMELERİ",
+  question: "İşi üç yıldan fazla sürmüş gemiadamı, iş akdinin feshi için önel süresi;",
+  options: ["3 haftadır", "2 haftadır", "4 haftadır", "6 haftadır", "8 haftadır"],
+  correctIndex: 4
+},
+
+{
+  id: 298,
+  subtitle: "İŞ SÖZLEŞMELERİ",
+  question: "854 sayılı Deniz İş Kanunu’na göre fesih hakkının kullanılması için öngörülen sürelerden hangisi yanlıştır?",
+  options: ["İşi bir buçuk yıl ila üç yıl arası süren gemiadamı için bildirim diğer tarafa yapılmasından başlayarak altı hafta sonra sona erer", "İşi üç yıldan fazla sürmüş olan gemiadamı için bildirim diğer tarafa yapılmasından itibaren sekiz hafta sonra sona erer", "Süresi belirsiz hizmet akdi Deniz İş Kanunu md.14 hükümlerine göre gemiadamı işe alınmasından itibaren altı ay geçmedikçe bozulamaz", "İşi üç aydan fazla süren gemiadamı için bildirim yapılmasından itibaren altı ay geçmedikçe bozulamaz", "İşi altı ay sürmüş gemiadamı için bildirimin diğer tarafa yapılmasından başlayarak iki hafta sonra sona erer"],
+  correctIndex: 3
+},
+
+{
+  id: 300,
+  subtitle: "15/12 SINAV SORUSU",
+  question: "Aşağıdakilerden hangisi booking evrağı değildir ve yükün teslim edildiğini gösteren bir belgedir?",
+  options: ["Booking Note", "Freight Booking Form", "Reservation Note", "Space Booking Confirmation", "Konşimento (Bill of Lading)"],
+  correctIndex: 3
+},
+
+{
+  id: 301,
+  subtitle: "15/12 SINAV SORUSU",
+  question: "Türk Ticaret Kanunu hükümleri çerçevesinde aşağıdaki belgelerden hangisi, taşıyan tarafından yükün teslim alındığını veya gemiye yüklendiğini ispat eden, teslimde ibraz edilmesi gereken ve kıymetli evrak niteliği taşıyan belgedir?",
+  options: ["Konşimento (Bill of Lading)", "Freight Booking Confirmation", "Sea Waybill", "Booking Note", "Yük Rezervasyon Formu"],
+  correctIndex: 3
+},
+
+{
+  id: 302,
+  subtitle: "15/12 SINAV SORUSU",
+  question: "Mevzuat hükümlerine göre deniz çevresinin kirletilmesi halinde idari para cezası kesme yetkisi bulunmayan birim aşağıdakilerden hangisidir?",
+  options: ["Çevre, Şehircilik ve İklim Değişikliği Bakanlığı", "Sahil Güvenlik Komutanlığı", "Liman Başkanlığı", "Deniz Polisi", "Belediye"],
+  correctIndex: 3
+},
+
+{
+  id: 303,
+  subtitle: "15/12 SINAV SORUSU",
+  question: "SPS Code ve ilgili ulusal mevzuat kapsamında, Ulaştırma ve Altyapı Bakanlığının devredemeyeceği yetki aşağıdakilerden hangisidir?",
+  options: ["Liman tesisi güvenlik planlarının hazırlanması", "Liman tesisi güvenlik görevlisinin atanması", "ISPS sertifikalandırma ve onay işlemleri", "Liman tesisi güvenlik tatbikatlarının yapılması", "Güvenlik seviyesinin uygulanmasının sağlanması"],
+  correctIndex: 3
+},
+
+{
+  id: 304,
+  subtitle: "15/12 SINAV SORUSU",
+  question: "Sigorta hukuku ve ticaret uygulamalarında “takseli poliçe” aşağıdakilerden hangisini ifade eder?",
+  options: ["Prim tutarının sonradan belirlendiği poliçe", "Rizikonun gerçekleşmesine göre fiyatlanan poliçe", "Sigorta bedelinin taksitler hâlinde ödendiği poliçe", "Önceden fiyatı belirlenmiş olan poliçe", "Sadece tek seferlik taşımalarda düzenlenen poliçe"],
+  correctIndex: 3
+},
+
+{
+  id: 305,
+  subtitle: "15/12 SINAV SORUSU",
+  question: "Takseli poliçe ile ilgili aşağıdaki ifadelerden hangisi doğrudur?",
+  options: ["Prim baştan sabit olarak kararlaştırılır", "Prim, gerçekleşen rizikoya göre değişir", "Prim, taşıma sayısına göre sonradan belirlenir", "Prim, taşıma sonunda hesaplanır", "Prim yalnızca zarar halinde ödenir"],
+  correctIndex: 3
+},
+
+{
+  id: 306,
+  subtitle: "15/12 SINAV SORUSU",
+  question: "ISPS Code ve ilgili ulusal mevzuat kapsamında Liman Başkanlığının yetkileri ile ilgili aşağıdaki ifadelerden hangisi yanlıştır?",
+  options: ["Liman tesislerinin ISPS kapsamındaki uygulamalarını denetlemek", "Gerekli durumlarda güvenlik seviyesinin uygulanmasını sağlamak", "Liman tesisi güvenlik planlarının onayını vermek", "ISPS sertifikası düzenlemek ve iptal etmek", "Uygunsuzlukların giderilmesini talep etmek"],
+  correctIndex: 3
+},
+
+{
+  id: 307,
+  subtitle: "15/12 SINAV SORUSU",
+  question: "Deniz sigortalarında müşterek avarya hâlinde sigortacının ödeyeceği zarar oranı aşağıdakilerden hangisidir?",
+  options: ["Zararın tamamı", "Zararın yarısı", "Zararın üçte ikisi", "Zararın dörtte üçü", "Sigorta bedeline göre değişir"],
+  correctIndex: 3
+},
+
+{
+  id: 308,
+  subtitle: "15/12 SINAV SORUSU",
+  question: "Liman çıkış belgesi düzenlenirken aşağıdakilerden hangisi Liman Başkanlığı tarafından doğrudan kontrol edilen unsurlar arasında yer almaz?",
+  options: ["Gemi belgeleri", "Mürettebat listesi", "Yolcu listesi", "Kumanya", "Makine durumu"],
+  correctIndex: 3
+},
+
+{
+  id: 309,
+  subtitle: "15/12 SINAV SORUSU",
+  question: "ISPS Code ve ilgili ulusal mevzuata göre aşağıdaki işlemlerden hangisi Liman Başkanlığının görevleri arasında yer almaz?",
+  options: ["Liman tesislerinde ISPS uygulamalarını izlemek", "Liman tesisi güvenlik planını onaylamak", "Güvenlik seviyesinin uygulanmasını koordine etmek", "Tespit edilen uygunsuzlukları raporlamak", "Uygunsuzlukların giderilmesini istemek"],
+  correctIndex: 3
+},
+
+
+
+
+
+
+      // ← Buradan sonra Excel’deki diğer soruları aynı formatta ekleyebilirsin
+    ];
+
+    // ---- Genel değişkenler ----
+    let quizQuestions = [];   // Kullanıcının seçeceği kadar soru
+    let currentIndex = 0;
+    let selectedIndex = null;
+    let correctCount = 0;
+    let wrongCount = 0;
+
+    let timerInterval = null;
+    let startTime = null;
+
+    // ---- DOM referansları ----
+    const questionHeader  = document.getElementById("questionHeader");
+    const questionProgress= document.getElementById("questionProgress");
+    const questionText    = document.getElementById("questionText");
+    const questionSub     = document.getElementById("questionSub");
+    const metaLine        = document.getElementById("metaLine");
+    const optionsGrid     = document.getElementById("optionsGrid");
+    const feedbackEl      = document.getElementById("feedback");
+
+    const statCorrectEl   = document.getElementById("statCorrect");
+    const statWrongEl     = document.getElementById("statWrong");
+    const statTotalEl     = document.getElementById("statTotal");
+    const statTotal2El    = document.getElementById("statTotal2");
+    const statCurrentEl   = document.getElementById("statCurrent");
+    const timerEl         = document.getElementById("timer");
+
+    const btnShowAnswer   = document.getElementById("btnShowAnswer");
+    const btnNext         = document.getElementById("btnNext");
+
+    // ---- Yardımcı: Diziyi karıştır (Fisher–Yates) ----
+    function shuffle(array) {
+      const arr = array.slice();
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    // ---- Zaman formatı ----
+    function formatTime(seconds) {
+      const m = Math.floor(seconds / 60);
+      const s = seconds % 60;
+      const mm = String(m).padStart(2, "0");
+      const ss = String(s).padStart(2, "0");
+      return mm + ":" + ss;
+    }
+
+    function startTimer() {
+      startTime = Date.now();
+      if (timerInterval) clearInterval(timerInterval);
+      timerInterval = setInterval(() => {
+        const elapsed = Math.floor((Date.now() - startTime) / 1000);
+        timerEl.textContent = formatTime(elapsed);
+      }, 1000);
+    }
+
+    // ---- Skor güncelle ----
+    function updateStats() {
+      statCorrectEl.textContent = correctCount;
+      statWrongEl.textContent   = wrongCount;
+      statTotalEl.textContent   = quizQuestions.length;
+      statTotal2El.textContent  = quizQuestions.length;
+      statCurrentEl.textContent = currentIndex + 1;
+    }
+
+    // ---- Soru çiz ----
+    function renderQuestion() {
+      const q = quizQuestions[currentIndex];
+      questionHeader.querySelector("span").textContent = "Soru " + (currentIndex + 1);
+      questionProgress.textContent = "Soru " + (currentIndex + 1) + " / " + quizQuestions.length;
+
+      metaLine.textContent = (q.subtitle ? q.subtitle + " – " : "") + (q.category || "");
+      questionText.textContent = q.question || "";
+      questionSub.textContent  = q.sub || "";
+
+      feedbackEl.textContent = "";
+      feedbackEl.className = "feedback";
+
+      selectedIndex = null;
+      optionsGrid.innerHTML = "";
+
+      q.options.forEach((opt, idx) => {
+        const row = document.createElement("div");
+        row.className = "option-row";
+        row.dataset.index = idx;
+
+        row.innerHTML = `
+          <div class="radio-circle"></div>
+          <div>${opt}</div>
+        `;
+
+        row.addEventListener("click", () => handleOptionClick(idx));
+        optionsGrid.appendChild(row);
+      });
+
+      updateStats();
+    }
+
+    // ---- Cevap seçildiğinde ----
+    function handleOptionClick(idx) {
+      if (selectedIndex !== null) return; // Soruya yalnızca bir kez cevap
+
+      selectedIndex = idx;
+      const q = quizQuestions[currentIndex];
+      const optionRows = optionsGrid.querySelectorAll(".option-row");
+
+      optionRows.forEach(r => r.classList.add("disabled"));
+
+      if (idx === q.correctIndex) {
+        correctCount++;
+        feedbackEl.textContent = "Doğru! ✅";
+        feedbackEl.classList.add("correct");
+      } else {
+        wrongCount++;
+        feedbackEl.textContent = "Yanlış. ❌";
+        feedbackEl.classList.add("incorrect");
+      }
+
+      optionRows.forEach((row, i) => {
+        if (i === q.correctIndex) row.classList.add("correct");
+        if (i === idx && i !== q.correctIndex) row.classList.add("incorrect");
+        if (i === idx) row.classList.add("selected");
+      });
+
+      updateStats();
+    }
+
+    // ---- Cevabı göster (puan değiştirmeden) ----
+    function showAnswer() {
+      if (!quizQuestions.length) return;
+      if (selectedIndex !== null) return;
+
+      const q = quizQuestions[currentIndex];
+      const optionRows = optionsGrid.querySelectorAll(".option-row");
+      optionRows.forEach((row, i) => {
+        row.classList.add("disabled");
+        if (i === q.correctIndex) {
+          row.classList.add("correct");
+        }
+      });
+      feedbackEl.textContent = "Doğru cevap gösterildi.";
+      feedbackEl.classList.remove("correct", "incorrect");
+    }
+
+    // ---- Sonraki soru ----
+    function nextQuestion() {
+      if (currentIndex < quizQuestions.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      } else {
+        feedbackEl.textContent = "Sınav bitti, tebrikler.";
+        feedbackEl.classList.remove("incorrect");
+        feedbackEl.classList.add("correct");
+      }
+    }
+
+    // ---- Kullanıcıdan kaç soru çözeceğini iste ----
+    function initQuiz() {
+      if (!questions.length) {
+        alert("Henüz soru tanımlı değil.");
+        return;
+      }
+
+      const max = questions.length;
+      let count = parseInt(
+        prompt("Kaç soru çözmek istiyorsunuz? (1-" + max + ")", Math.min(20, max)),
+        10
+      );
+      if (isNaN(count) || count < 1 || count > max) {
+        count = max;
+      }
+
+      const shuffled = shuffle(questions);
+      quizQuestions = shuffled.slice(0, count);
+
+      currentIndex = 0;
+      correctCount = 0;
+      wrongCount = 0;
+      startTimer();
+      renderQuestion();
+    }
+
+    btnShowAnswer.addEventListener("click", showAnswer);
+    btnNext.addEventListener("click", nextQuestion);
+
+    // Sayfa açıldığında başlat
+    initQuiz();
+  </script>
+</body>
+</html>
