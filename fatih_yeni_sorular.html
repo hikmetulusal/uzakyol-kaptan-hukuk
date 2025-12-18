@@ -221,91 +221,290 @@
       Şimdilik ilk 3 soruyu Excel'inden örnek olarak koydum.
       Geri kalan 97’yi aynı formatta ekleyebilirsin.
     */
-   const questions = [
+const questions = [
+
 {
   id: 1,
-  subtitle: "",
-  question: "Aşağıdakilerden hangisi booking evrağı değildir ve yükün teslim edildiğini gösteren bir belgedir?",
-  options: ["Booking Note", "Freight Booking Form", "Reservation Note", "Space Booking Confirmation", "Konşimento (Bill of Lading)"],
-  correctIndex: 4
+  subtitle: "DENİZ HUKUKU",
+  question: "Deniz sigortalarında 'tenzil (muafiyet)' kavramı neyi ifade eder?",
+  options: [
+    "Sigorta bedelinin poliçede belirtilen kısmının ödenmemesini",
+    "Hasarın belirli bir tutarının sigortalı üzerinde bırakılmasını",
+    "Sigorta süresinin kısaltılmasını",
+    "Sigortacının sorumluluğunun tamamen kaldırılmasını",
+    "Sigorta priminin iade edilmesini"
+  ],
+  correctIndex: 1
 },
 
 {
   id: 2,
-  subtitle: "",
-  question: "Türk Ticaret Kanunu hükümleri çerçevesinde aşağıdaki belgelerden hangisi, taşıyan tarafından yükün teslim alındığını veya gemiye yüklendiğini ispat eden, teslimde ibraz edilmesi gereken ve kıymetli evrak niteliği taşıyan belgedir?",
-  options: ["Konşimento (Bill of Lading)", "Freight Booking Confirmation", "Sea Waybill", "Booking Note", "Yük Rezervasyon Formu"],
-  correctIndex: 0
-},
-
-{
-  id: 3,
-  subtitle: "",
-  question: "Mevzuat hükümlerine göre deniz çevresinin kirletilmesi halinde idari para cezası kesme yetkisi bulunmayan birim aşağıdakilerden hangisidir?",
-  options: ["Çevre, Şehircilik ve İklim Değişikliği Bakanlığı", "Sahil Güvenlik Komutanlığı", "Liman Başkanlığı", "Deniz Polisi", "Belediye"],
+  subtitle: "DENİZ HUKUKU",
+  question: "ISPS Code kapsamında gemi güvenlik sertifikasının geçerlilik süresi genellikle ne kadardır?",
+  options: [
+    "1 yıl",
+    "2 yıl",
+    "3 yıl",
+    "5 yıl",
+    "Süresiz"
+  ],
   correctIndex: 3
 },
 
 {
-  id: 4,
-  subtitle: "",
-  question: "SPS Code ve ilgili ulusal mevzuat kapsamında, Ulaştırma ve Altyapı Bakanlığının devredemeyeceği yetki aşağıdakilerden hangisidir?",
-  options: ["Liman tesisi güvenlik planlarının hazırlanması", "Liman tesisi güvenlik görevlisinin atanması", "ISPS sertifikalandırma ve onay işlemleri", "Liman tesisi güvenlik tatbikatlarının yapılması", "Güvenlik seviyesinin uygulanmasının sağlanması"],
+  id: 3,
+  subtitle: "DENİZ HUKUKU",
+  question: "Aşağıdakilerden hangisi kaptanın kanuni haklarından biri değildir?",
+  options: [
+    "Disiplin yetkisini kullanmak",
+    "Gemi emniyetini sağlamak",
+    "Gemi adamlarını keyfi olarak işten çıkarmak",
+    "Zorunlu hallerde sözleşmelere müdahale etmek",
+    "Seyir ve yük emniyetiyle ilgili karar almak"
+  ],
   correctIndex: 2
 },
 
 {
+  id: 4,
+  subtitle: "DENİZ HUKUKU",
+  question: "Aşağıdakilerden hangisi IMO’nun ana organlarından biri değildir?",
+  options: [
+    "Genel Kurul",
+    "Konsey",
+    "Deniz Güvenliği Komitesi (MSC)",
+    "Adalet Komisyonu",
+    "Deniz Çevresini Koruma Komitesi (MEPC)"
+  ],
+  correctIndex: 3
+},
+
+{
   id: 5,
-  subtitle: "",
-  question: "Sigorta hukuku ve ticaret uygulamalarında “takseli poliçe” aşağıdakilerden hangisini ifade eder?",
-  options: ["Prim tutarının sonradan belirlendiği poliçe", "Rizikonun gerçekleşmesine göre fiyatlanan poliçe", "Sigorta bedelinin taksitler hâlinde ödendiği poliçe", "Önceden fiyatı belirlenmiş olan poliçe", "Sadece tek seferlik taşımalarda düzenlenen poliçe"],
+  subtitle: "DENİZ HUKUKU",
+  question: "Aşağıdakilerden hangisi gemi sicilinin zorunlu unsurlarından değildir?",
+  options: [
+    "Geminin adı",
+    "Bağlama limanı",
+    "Geminin tonajı",
+    "Gemideki yükün cinsi",
+    "Gemi sahibinin kimliği"
+  ],
   correctIndex: 3
 },
 
 {
   id: 6,
-  subtitle: "",
-  question: "Takseli poliçe ile ilgili aşağıdaki ifadelerden hangisi doğrudur?",
-  options: ["Prim baştan sabit olarak kararlaştırılır", "Prim, gerçekleşen rizikoya göre değişir", "Prim, taşıma sayısına göre sonradan belirlenir", "Prim, taşıma sonunda hesaplanır", "Prim yalnızca zarar halinde ödenir"],
-  correctIndex: 0
+  subtitle: "DENİZ HUKUKU",
+  question: "Aşağıdakilerden hangisi fazla çalışma (mesai) kapsamında değerlendirilmez?",
+  options: [
+    "Sefer emniyeti için yapılan çalışmalar",
+    "Yükleme ve tahliye işlemleri",
+    "Acil durum görevleri",
+    "Kaptanın emirleriyle yapılan rutin vardiya",
+    "Can ve mal emniyeti için yapılan çalışmalar"
+  ],
+  correctIndex: 3
 },
 
 {
   id: 7,
-  subtitle: "",
-  question: "ISPS Code ve ilgili ulusal mevzuat kapsamında Liman Başkanlığının yetkileri ile ilgili aşağıdaki ifadelerden hangisi yanlıştır?",
-  options: ["Liman tesislerinin ISPS kapsamındaki uygulamalarını denetlemek", "Gerekli durumlarda güvenlik seviyesinin uygulanmasını sağlamak", "Liman tesisi güvenlik planlarının onayını vermek", "ISPS sertifikası düzenlemek ve iptal etmek", "Uygunsuzlukların giderilmesini talep etmek"],
-  correctIndex: 3
+  subtitle: "DENİZ HUKUKU",
+  question: "Deniz İş Kanunu’na göre haftalık normal çalışma süresi kaç saattir?",
+  options: [
+    "40 saat",
+    "45 saat",
+    "48 saat",
+    "54 saat",
+    "60 saat"
+  ],
+  correctIndex: 2
 },
 
 {
   id: 8,
-  subtitle: "",
-  question: "Deniz sigortalarında müşterek avarya hâlinde sigortacının ödeyeceği zarar oranı aşağıdakilerden hangisidir?",
-  options: ["Zararın tamamı", "Zararın yarısı", "Zararın üçte ikisi", "Zararın dörtte üçü", "Sigorta bedeline göre değişir"],
-  correctIndex: 3
+  subtitle: "DENİZ HUKUKU",
+  question: "Deniz kirliliği durumunda gemi personelinin yapması gereken işlemleri bulabileceği doküman aşağıdakilerden hangisidir?",
+  options: [
+    "ISM Code",
+    "SOPEP / SMPEP",
+    "COLREG",
+    "STCW",
+    "Load Line Convention"
+  ],
+  correctIndex: 1
 },
 
 {
   id: 9,
-  subtitle: "",
-  question: "Liman çıkış belgesi düzenlenirken aşağıdakilerden hangisi Liman Başkanlığı tarafından doğrudan kontrol edilen unsurlar arasında yer almaz?",
-  options: ["Gemi belgeleri", "Mürettebat listesi", "Yolcu listesi", "Kumanya", "Makine durumu"],
+  subtitle: "DENİZ HUKUKU",
+  question: "Aşağıdakilerden hangisi navlun kapsamında değerlendirilmez?",
+  options: [
+    "Taşıma bedeli",
+    "Gecikme ücreti (demuraj)",
+    "Yükleme bedeli",
+    "Tahliye bedeli",
+    "Sigorta primi"
+  ],
   correctIndex: 4
 },
 
 {
   id: 10,
-  subtitle: "",
-  question: "ISPS Code ve ilgili ulusal mevzuata göre aşağıdaki işlemlerden hangisi Liman Başkanlığının görevleri arasında yer almaz?",
-  options: ["Liman tesislerinde ISPS uygulamalarını izlemek", "Liman tesisi güvenlik planını onaylamak", "Güvenlik seviyesinin uygulanmasını koordine etmek", "Tespit edilen uygunsuzlukları raporlamak", "Uygunsuzlukların giderilmesini istemek"],
+  subtitle: "DENİZ HUKUKU",
+  question: "MARPOL Sözleşmesi ekleri ile kirletici türlerin doğru eşleşmesi hangisidir?",
+  options: [
+    "Ek I – Zararlı sıvı maddeler",
+    "Ek II – Petrol",
+    "Ek III – Ambalajlı zararlı maddeler",
+    "Ek IV – Hava kirliliği",
+    "Ek VI – Atık sular"
+  ],
+  correctIndex: 2
+},
+
+{
+  id: 11,
+  subtitle: "DENİZ HUKUKU",
+  question: "Kurtarma veya müşterek avarya hesabında aşağıdakilerden hangisi dikkate alınmaz?",
+  options: [
+    "Gemi değeri",
+    "Yük değeri",
+    "Navlun",
+    "Mürettebatın kişisel eşyaları",
+    "Kurtarma masrafları"
+  ],
+  correctIndex: 3
+},
+
+{
+  id: 12,
+  subtitle: "DENİZ HUKUKU",
+  question: "4922 sayılı Kanun’a göre idari para cezasını yazmaya yetkili makam aşağıdakilerden hangisidir?",
+  options: [
+    "Kaptan",
+    "Donatan",
+    "Liman Başkanlığı",
+    "Gemi acentesi",
+    "Sigorta şirketi"
+  ],
+  correctIndex: 2
+},
+
+{
+  id: 13,
+  subtitle: "DENİZ HUKUKU",
+  question: "Uluslararası kurallara göre bir geminin yolcu gemisi sayılabilmesi için kaç kişiden fazla yolcu taşıması gerekir?",
+  options: [
+    "10",
+    "11",
+    "12",
+    "13",
+    "15"
+  ],
+  correctIndex: 3
+},
+
+{
+  id: 14,
+  subtitle: "DENİZ HUKUKU",
+  question: "Voyage charter (sefer çarteri) aşağıdakilerden hangisini ifade eder?",
+  options: [
+    "Belirli süreyle gemi kiralanmasını",
+    "Belirli bir sefer için taşıma sözleşmesini",
+    "Gemi mürettebatının kiralanmasını",
+    "Sabit navlunlu uzun süreli sözleşmeyi",
+    "Çıplak gemi kiralamasını"
+  ],
   correctIndex: 1
 },
 
+{
+  id: 15,
+  subtitle: "DENİZ HUKUKU",
+  question: "Aşağıdakilerden hangisi deniz ticaret hukukunun konularından biridir?",
+  options: [
+    "Miras hukuku",
+    "Aile hukuku",
+    "Navlun sözleşmeleri",
+    "Ceza hukuku",
+    "İdare hukuku"
+  ],
+  correctIndex: 2
+},
 
+{
+  id: 16,
+  subtitle: "DENİZ HUKUKU",
+  question: "Aşağıdakilerden hangisi yanlıştır? (Donatan kavramı ile ilgili)",
+  options: [
+    "Gemi sahibi her zaman donatan sayılır",
+    "Gemi sahibi olmayan kişi donatan olabilir",
+    "Donatan gemiyi kendi adına işletir",
+    "Donatan ticari riskleri üstlenir",
+    "Donatan gemi üzerinde tasarruf yetkisine sahiptir"
+  ],
+  correctIndex: 0
+},
 
-      // ← Buradan sonra Excel’deki diğer soruları aynı formatta ekleyebilirsin
+{
+  id: 17,
+  subtitle: "DENİZ HUKUKU",
+  question: "P&I (Kulüp) sigortasının iptali için sigortalının en geç hangi tarihe kadar başvurması gerekir?",
+  options: [
+    "Herhangi bir zamanda",
+    "Sigorta yılının bitiminden sonra",
+    "Sigorta yılının başlamasından önce",
+    "Sigorta yılının bitiminden en az 3 ay önce",
+    "Sigorta priminin ödenmesinden sonra"
+  ],
+  correctIndex: 3
+},
+
+{
+  id: 18,
+  subtitle: "DENİZ HUKUKU",
+  question: "Kurtarma yardımı ücretinin belirlenmesinde aşağıdakilerden hangisi dikkate alınmaz?",
+  options: [
+    "Kurtarılan gemi ve yükün değeri",
+    "Kurtarma faaliyetinin başarı derecesi",
+    "Kurtarma sırasında karşılaşılan tehlikenin büyüklüğü",
+    "Kurtarma yapanların harcadığı emek ve zaman",
+    "Kurtarılan geminin seferden elde edeceği navlun geliri"
+  ],
+  correctIndex: 4
+}
+
+{
+  id: 19,
+  subtitle: "DENİZ HUKUKU",
+  question: "Deniz ticaretinde navlun ve benzeri ödemeler genellikle hangi para birimi üzerinden yapılır?",
+  options: [
+    "Türk Lirası",
+    "Euro",
+    "Sterlin",
+    "ABD Doları",
+    "İsviçre Frangı"
+  ],
+  correctIndex: 3
+},
+
+{
+  id: 20,
+  subtitle: "DENİZ HUKUKU",
+  question: "STCW kapsamında sağlıkla ilgili özel eğitim alması zorunlu olan personel aşağıdakilerden hangisidir?",
+  options: [
+    "Gemi aşçısı",
+    "Gemi doktoru",
+    "İlk yardım ve tıbbi bakım görevi verilen gemi adamı",
+    "Kamarot",
+    "Stajyer"
+  ],
+  correctIndex: 2
+}
+// ← Buradan sonra Excel’deki diğer soruları aynı formatta ekleyebilirsin
     ];
+
 
     // ---- Genel değişkenler ----
     let quizQuestions = [];   // Kullanıcının seçeceği kadar soru
